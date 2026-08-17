@@ -1,0 +1,53 @@
+:root {
+  color-scheme: light;
+
+  /* Color Palette — Apple HIG inspired */
+  --ae-blue: #0071e3;
+  --ae-blue-deep: #0057b8;
+  --ae-blue-soft: #e8f2ff;
+  --ae-orange: #ff8a00;
+  --ae-orange-soft: #fff1dc;
+  --ae-green: #34c759;
+  --ae-green-soft: #e8faf0;
+  --ae-purple: #af52de;
+  --ae-purple-soft: #f3e8ff;
+  --ae-ink: #1d1d1f;
+  --ae-ink-muted: #6e6e73;
+  --ae-paper: #f5f5f7;
+  --ae-surface: #ffffff;
+  --ae-line: rgba(29, 29, 31, 0.12);
+  --ae-night: #080b16;
+  --ae-night-soft: #11182a;
+
+  /* Typography */
+  --ae-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+    "SF Pro Text", "PingFang SC", "Noto Sans CJK SC", "Helvetica Neue",
+    Arial, sans-serif;
+  --ae-font-zh: "PingFang SC", -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Noto Sans CJK SC", sans-serif;
+
+  /* Spacing — 4px base unit */
+  --ae-space-1: 4px;
+  --ae-space-2: 8px;
+  --ae-space-3: 12px;
+  --ae-space-4: 16px;
+  --ae-space-5: 24px;
+  --ae-space-6: 32px;
+  --ae-space-7: 48px;
+  --ae-space-8: 64px;
+  --ae-space-9: 80px;
+  --ae-space-10: 96px;
+
+  /* Border Radius */
+  --ae-radius-sm: 14px;
+  --ae-radius-md: 22px;
+  --ae-radius-lg: 32px;
+  --ae-radius-pill: 999px;
+
+  /* Shadows */
+  --ae-shadow-soft: 0 18px 50px rgba(29, 29, 31, 0.1);
+  --ae-shadow-float: 0 28px 80px rgba(7, 20, 48, 0.18);
+
+  /* Easing — Apple spring-like deceleration */
+  --ae-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

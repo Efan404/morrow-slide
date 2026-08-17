@@ -1,0 +1,482 @@
+@import './tokens.css';
+@import './motion.css';
+
+/* ── Global Reset ── */
+
+html,
+body,
+#app {
+  min-height: 100%;
+  margin: 0;
+  color: var(--ae-ink);
+  background: var(--ae-paper);
+  font-family: var(--ae-font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.slidev-layout {
+  box-sizing: border-box;
+  font-family: var(--ae-font-sans);
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-padding-block: 2rem;
+  overscroll-behavior-y: contain;
+}
+
+.slidev-layout :lang(zh) {
+  font-family: var(--ae-font-zh);
+}
+
+.slidev-layout h1,
+.slidev-layout h2,
+.slidev-layout h3,
+.slidev-layout p {
+  margin-block-start: 0;
+}
+
+/* theme-apple-basic dims every h3 to opacity-40 with uppercase —
+   our card headings must stay full-strength */
+.slidev-layout h3 {
+  padding-top: 0;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.slidev-layout h3:not(.opacity-100) {
+  opacity: 1;
+}
+
+::selection {
+  color: var(--ae-ink);
+  background: rgba(0, 113, 227, 0.2);
+}
+
+/* ── Shared Utilities ── */
+
+.eyebrow {
+  margin: 0 0 var(--ae-space-4);
+  color: var(--ae-blue);
+  font-size: 0.86rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  max-width: 13ch;
+  margin: 0;
+  color: var(--ae-ink);
+  font-size: 4.75rem;
+  font-weight: 760;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--ae-radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--ae-shadow-soft);
+  backdrop-filter: blur(22px) saturate(1.12);
+  -webkit-backdrop-filter: blur(22px) saturate(1.12);
+}
+
+/* ── Slide Header ── */
+
+.deck-signature {
+  position: absolute;
+  z-index: 5;
+  top: 1.5rem;
+  right: 1.75rem;
+  color: rgba(29, 29, 31, 0.58);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.slide-header .slide-sub {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: var(--ae-ink-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.slide-header h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 3.8vw, 3.4rem);
+  font-weight: 740;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
+}
+
+/* ── Vision Statement (page 3) ── */
+
+.vision-statement {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  min-height: 100%;
+  text-align: center;
+}
+
+.vision-statement .eyebrow {
+  text-align: center;
+}
+
+.vision-dim {
+  margin: 0;
+  color: var(--ae-ink-muted);
+  font-size: 1.45rem;
+  font-weight: 520;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+.vision-hero {
+  margin: 1rem 0 0;
+  color: var(--ae-ink);
+  font-size: clamp(3.2rem, 5.4vw, 4.8rem);
+  font-weight: 760;
+  letter-spacing: -0.06em;
+  line-height: 1.02;
+}
+
+.vision-sub {
+  margin: 2.4rem 0 0;
+  color: #86868b;
+  font-size: 1.05rem;
+  font-weight: 520;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+}
+
+.vision-sub b {
+  color: var(--ae-ink);
+  font-weight: 650;
+}
+
+/* ── Section Marker (full-bleed divider slide) ── */
+
+.section-marker {
+  display: grid;
+  align-content: center;
+  min-height: 100%;
+  max-width: 56rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-marker .eyebrow {
+  text-align: center;
+}
+
+.section-marker h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 4.2vw, 3.8rem);
+  font-weight: 740;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+}
+
+.section-marker > span {
+  display: block;
+  max-width: 38rem;
+  margin: 1.2rem auto 0;
+  color: var(--ae-ink-muted);
+  font-size: 1.12rem;
+  line-height: 1.5;
+}
+
+/* ── Two-Column Briefing Pattern ── */
+
+.briefing {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: 4.5rem;
+  min-height: 100%;
+}
+
+.briefing h1 {
+  margin: 0;
+  font-size: clamp(2.3rem, 3.5vw, 3.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.briefing > p {
+  max-width: 27rem;
+  margin: 1.2rem 0 0;
+  color: var(--ae-ink-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.briefing header > p:not(.eyebrow) {
+  max-width: 24rem;
+  margin: 1.2rem 0 0;
+  color: var(--ae-ink-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* ── Pain Points Grid ── */
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.pain-card {
+  padding: 1.6rem 1.8rem;
+  border-radius: var(--ae-radius-lg);
+  background: var(--ae-surface);
+  box-shadow: var(--ae-shadow-soft);
+  transition: box-shadow 280ms var(--ae-ease), transform 280ms var(--ae-ease);
+}
+
+.pain-card:hover {
+  box-shadow: var(--ae-shadow-float);
+  transform: translateY(-4px);
+}
+
+.pain-card .pain-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.pain-card .pain-num {
+  color: var(--ae-blue);
+  font-size: 0.92rem;
+  font-weight: 780;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.pain-card h3 {
+  margin: 0;
+  color: var(--ae-ink);
+  font-size: 1.35rem;
+  font-weight: 780;
+  letter-spacing: -0.025em;
+}
+
+.pain-card p {
+  margin: 0.75rem 0 0;
+  color: #86868b;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* ── Checklist ── */
+
+.checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ae-line);
+}
+
+.checklist li {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--ae-line);
+}
+
+.checklist li .check {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--ae-green-soft);
+  color: var(--ae-green);
+  font-size: 0.9rem;
+  font-weight: 780;
+}
+
+.checklist--plain li .check {
+  width: 2.1rem;
+  height: 2.1rem;
+  background: var(--ae-blue-soft);
+  color: var(--ae-blue-deep);
+  font-size: 1rem;
+}
+
+.checklist b {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 650;
+}
+
+.checklist p {
+  margin: 0.2rem 0 0;
+  color: var(--ae-ink-muted);
+  font-size: 0.86rem;
+  line-height: 1.4;
+}
+
+/* ── Why Morrow — Differentiators ── */
+
+.diff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.8rem;
+}
+
+.diff-card {
+  padding: 1.3rem 1.5rem;
+  border-radius: var(--ae-radius-lg);
+  background: var(--ae-surface);
+  border: 1px solid var(--ae-line);
+  transition: box-shadow 280ms var(--ae-ease), transform 280ms var(--ae-ease);
+}
+
+.diff-card:hover {
+  box-shadow: var(--ae-shadow-float);
+  transform: translateY(-4px);
+}
+
+.diff-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 720;
+  letter-spacing: -0.025em;
+}
+
+.diff-card p {
+  margin: 0.5rem 0 0;
+  color: var(--ae-ink-muted);
+  font-size: 0.85rem;
+  line-height: 1.42;
+}
+
+.diff-card .diff-tag {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--ae-radius-pill);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.diff-tag--blue {
+  color: var(--ae-blue);
+  background: var(--ae-blue-soft);
+}
+
+.diff-tag--green {
+  color: var(--ae-green);
+  background: var(--ae-green-soft);
+}
+
+.diff-tag--purple {
+  color: var(--ae-purple);
+  background: var(--ae-purple-soft);
+}
+
+.diff-tag--orange {
+  color: var(--ae-orange);
+  background: var(--ae-orange-soft);
+}
+
+/* ── Thank You Slide ── */
+
+.thank-you {
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  min-height: 100%;
+  text-align: center;
+}
+
+.thank-you h1 {
+  margin: 0;
+  color: var(--ae-ink);
+  font-size: clamp(4rem, 6.5vw, 5.5rem);
+  font-weight: 760;
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.thank-you .tagline {
+  margin: 1.5rem 0 0;
+  color: var(--ae-ink-muted);
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 520;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+}
+
+.thank-you .cta-row {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.thank-you .cta-btn {
+  padding: 0.85rem 2rem;
+  border-radius: var(--ae-radius-pill);
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  transition: transform 200ms var(--ae-ease), box-shadow 200ms var(--ae-ease);
+}
+
+.cta-btn--primary {
+  color: white;
+  background: var(--ae-blue);
+}
+
+.cta-btn--primary:hover {
+  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.3);
+  transform: translateY(-2px);
+}
+
+.cta-btn--secondary {
+  color: var(--ae-blue);
+  background: var(--ae-blue-soft);
+  border: 1px solid rgba(0, 113, 227, 0.2);
+}
+
+.cta-btn--secondary:hover {
+  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 860px) {
+  .briefing {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pain-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+
+
+  .diff-grid {
+    grid-template-columns: 1fr;
+  }
+}

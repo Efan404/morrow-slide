@@ -1,0 +1,21 @@
+{
+  "name": "morrow-hackathon-pitch",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.5.0",
+  "scripts": {
+    "dev": "slidev slides.md --open",
+    "build": "slidev build slides.md",
+    "build:pages": "slidev build slides.md --base /ppt/ && cp dist/index.html dist/404.html",
+    "export": "slidev export slides.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.19.0",
+    "@slidev/theme-apple-basic": "^0.25.1",
+    "vue": "^3.5.41"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "typescript": "^7.0.2"
+  }
+}
