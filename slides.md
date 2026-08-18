@@ -327,7 +327,7 @@ layout: pitch-stage
   <ol class="checklist checklist--plain">
     <li>
       <span class="check">✓</span>
-      <div><b>结构化工单</b><p>把消费者的售后请求转化为持续存在的 Service Case</p></div>
+      <div><b>受约束的执行</b><p>把消费者的请求转化为可验证事实与可执行状态</p></div>
     </li>
     <li>
       <span class="check">✓</span>
@@ -359,14 +359,14 @@ layout: pitch-stage
 
 <FlowPipeline :steps="[
   { num: '01', title: 'Support Entry', desc: '碰一下卡片，进入品牌售后' },
-  { num: '02', title: 'Case', desc: 'AI 理解需求，生成工单' },
+  { num: '02', title: 'Case', desc: '对话变成可验证状态' },
   { num: '03', title: 'Evidence', desc: '凭证、序列号，来源可溯' },
   { num: '04', title: 'Policy', desc: '品牌政策决定下一步' },
   { num: '05', title: 'Resolution', desc: '换新 + 人工审批' },
   { num: '06', title: 'Console', desc: '品牌看到同一张 Case' },
 ]" />
 
-<p class="center-note">渠道会变化，Case 持续存在。<span class="note-em">Channels change. Cases persist.</span></p>
+<p class="center-note">Case 是运行账本，<b>可信执行才是价值。</b></p>
 
 <style scoped>
 .center-note {
@@ -427,19 +427,19 @@ layout: pitch-stage
 ---
 
 <!--
-12 · 差异化。四个标签各一句，重点讲"AI 是可选项"。
+12 · 现有能力收束。Case 降为运行账本，可信执行升为核心价值。
 -->
 
 <header class="slide-header">
   <p class="eyebrow">WHY MORROW</p>
-  <h1>工单是核心，AI 只是入口之一。</h1>
+  <h1>Case 承载过程，可信执行才是核心。</h1>
 </header>
 
 <div class="diff-grid">
   <article class="diff-card hover-lift">
-    <span class="diff-tag diff-tag--blue">Channels change</span>
-    <h3>Case 持续存在</h3>
-    <p>官网、订单页、二维码、NFC 都只是入口。渠道会变化，Case 才是品牌资产。</p>
+    <span class="diff-tag diff-tag--blue">Execution ledger</span>
+    <h3>Case 是运行账本</h3>
+    <p>承载授权、证据、政策结果与处理记录，让每个动作都有依据可复核。</p>
   </article>
   <article class="diff-card hover-lift">
     <span class="diff-tag diff-tag--green">Optional AI</span>
@@ -463,7 +463,123 @@ layout: pitch-stage
 ---
 
 <!--
-13 · 章节页：进入商业部分。
+13 · 回答评委最直接的问题：为什么企业不能直接接一个大模型客服？先讲风险，再给出系统边界。
+-->
+
+<header class="slide-header">
+  <p class="eyebrow">GENERIC AI vs. MORROW</p>
+  <h1>大模型会回答，<br/>企业需要它被授权地行动。</h1>
+</header>
+
+<div class="execution-compare">
+  <article class="compare-panel compare-panel--generic">
+    <span class="compare-kicker">Generic AI Agent</span>
+    <h3>会共情，也可能越过边界</h3>
+    <ul>
+      <li>用户陈述、图片、订单信息混在同一段上下文里</li>
+      <li>模型的“建议”可能被用户理解为退款或换新承诺</li>
+      <li>人工接手时，仍要从头翻聊天记录、重新核实</li>
+    </ul>
+  </article>
+  <article class="compare-panel compare-panel--morrow">
+    <span class="compare-kicker">Morrow Execution Agent</span>
+    <h3>AI 服务，系统决定能做什么</h3>
+    <ul>
+      <li>AI 负责理解、共情、追问与解释</li>
+      <li>Evidence 把用户陈述转成可验证事实</li>
+      <li>Policy + Permission 决定下一步能否执行</li>
+    </ul>
+  </article>
+</div>
+
+<p class="execution-principle">Morrow 不问“AI 有多自信”，只问：<b>证据成立吗？政策允许吗？权限足够吗？</b></p>
+
+---
+layout: pitch-stage
+---
+
+<!--
+14 · 30 秒鼠标 Demo 讲解页。按从左到右的顺序讲，不在 AI 对话上停留：重点是三道执行闸门。
+-->
+
+<header class="slide-header">
+  <p class="eyebrow">LIVE DECISION · MOUSE DEMO</p>
+  <h1>AI 像人一样服务，<br/>但必须像制度一样执行。</h1>
+</header>
+
+<div class="mouse-execution">
+  <div class="demo-dialogue">
+    <div class="demo-product">MOUSE · SCROLL WHEEL</div>
+    <p class="chat-line chat-line--user">“鼠标滚轮坏了，今天必须给我换新。”</p>
+    <p class="chat-line chat-line--agent">“我来帮你处理。先确认订单与序列号，再做一个 5 秒滚动测试。”</p>
+    <span class="dialogue-note">自然接住，但不预先承诺</span>
+  </div>
+
+  <div class="execution-gates">
+    <article class="gate-card gate-card--evidence">
+      <span class="gate-index">01 · EVIDENCE</span>
+      <h3>事实是否成立？</h3>
+      <p><b class="status-mini status-mini--verified">VERIFIED</b> 订单 / 序列号</p>
+      <p><b class="status-mini status-mini--supported">SUPPORTED</b> 5 秒滚动测试</p>
+    </article>
+    <article class="gate-card gate-card--policy">
+      <span class="gate-index">02 · POLICY</span>
+      <h3>企业是否允许？</h3>
+      <p>在保修期内</p>
+      <p>型号匹配 · 故障充分</p>
+    </article>
+    <article class="gate-card gate-card--permission">
+      <span class="gate-index">03 · PERMISSION</span>
+      <h3>当前能否执行？</h3>
+      <p><b>L3 · Replacement</b></p>
+      <p>规则满足后进入人工批准</p>
+    </article>
+    <div class="execution-outcome">
+      <span>REPLACEMENT READY</span>
+      <b>Awaiting brand approval</b>
+    </div>
+  </div>
+</div>
+
+---
+layout: pitch-stage
+---
+
+<!--
+15 · 授权模型。L0-L4 是风险边界的解释框架；现场 Demo 展示 L0/L1 自动服务、L3 审批与 L4 转人工。
+-->
+
+<header class="slide-header">
+  <p class="eyebrow">PERMISSION · L0–L4</p>
+  <h1>权限不是一个开关，<br/>而是一条风险梯度。</h1>
+</header>
+
+<div class="permission-ladder">
+  <article class="permission-level permission-level--auto">
+    <span>L0</span><b>说明与查询</b><small>AI 自动</small>
+  </article>
+  <article class="permission-level permission-level--auto">
+    <span>L1</span><b>收集材料<br/>创建申请</b><small>AI 自动</small>
+  </article>
+  <article class="permission-level permission-level--bounded">
+    <span>L2</span><b>维修发起<br/>低风险补偿</b><small>规则内执行</small>
+  </article>
+  <article class="permission-level permission-level--approval">
+    <span>L3</span><b>换新等<br/>高影响动作</b><small>政策满足 + 人工批准</small>
+  </article>
+  <article class="permission-level permission-level--human">
+    <span>L4</span><b>高金额 · 冲突<br/>疑似欺诈</b><small>转人工处理</small>
+  </article>
+</div>
+
+<p class="permission-summary"><span>MVP 现场演示</span> L0/L1 自动服务 → L3 换新审批；证据冲突时直接进入 L4 人工复核。</p>
+
+---
+layout: pitch-stage
+---
+
+<!--
+16 · 章节页：进入商业部分。
 -->
 
 <section class="section-marker">
@@ -477,7 +593,7 @@ layout: pitch-stage
 ---
 
 <!--
-14 · 商业模式。两种接入方式：只用工单底座（API），或全托管（AI + Console + Care Card）。
+17 · 商业模式。两种接入方式：只用工单底座（API），或全托管（AI + Console + Care Card）。
 -->
 
 <header class="slide-header">
@@ -504,7 +620,7 @@ layout: pitch-stage
 ---
 
 <!--
-15 · B 端展示。讲完切到 Console 现场演示：评委刚才产生的 Case，出现在企业端。
+18 · B 端展示。讲完切到 Console 现场演示：评委刚才产生的 Case，出现在企业端。
 -->
 
 <section class="briefing">
@@ -548,7 +664,7 @@ layout: pitch-stage
 ---
 
 <!--
-16 · 收尾。一句 tagline，鞠躬，进入评委提问。
+19 · 收尾。一句 tagline，鞠躬，进入评委提问。
 -->
 
 <section class="thank-you">

@@ -14,7 +14,7 @@ npm run export   # 导出 PDF（需要 playwright-chromium）
 
 ## 结构
 
-- `slides.md` — 16 页路演：开场互动（包装盒故事 + Care Card Demo）→ 品牌与愿景 → 提供的服务 → 商业与 B 端
+- `slides.md` — 19 页路演：开场互动（包装盒故事 + Care Card Demo）→ 品牌与愿景 → 提供的服务 → 可信执行 → 商业与 B 端
 - `styles/` — 设计令牌、动效、全局版式
 - `layouts/` — `pitch-stage`（标准白底页）、`cover-stage`（封面渐变）
 - `components/` — `FlowPipeline`（链路/流程管线）、`EvidenceBadges`（证据状态徽章）
