@@ -510,8 +510,8 @@ layout: pitch-stage
 <div class="mouse-execution">
   <div class="demo-dialogue">
     <div class="demo-product">MOUSE · SCROLL WHEEL</div>
-    <p class="chat-line chat-line--user">“鼠标滚轮坏了，今天必须给我换新。”</p>
-    <p class="chat-line chat-line--agent">“我来帮你处理。先确认订单与序列号，再做一个 5 秒滚动测试。”</p>
+    <p class="chat-line chat-line--user">“滚轮失灵，今天必须换新。”</p>
+    <p class="chat-line chat-line--agent">“我来处理。先核对订单、序列号，再做 5 秒滚动测试。”</p>
   </div>
 
   <div class="execution-gates">
@@ -521,12 +521,14 @@ layout: pitch-stage
       <p><b class="status-mini status-mini--verified">VERIFIED</b> 订单 / 序列号</p>
       <p><b class="status-mini status-mini--supported">SUPPORTED</b> 5 秒滚动测试</p>
     </article>
+    <span class="gate-arrow" aria-hidden="true">→</span>
     <article class="gate-card gate-card--policy">
       <span class="gate-index">02 · POLICY</span>
       <h3>企业是否允许？</h3>
       <p>在保修期内</p>
       <p>型号匹配 · 故障充分</p>
     </article>
+    <span class="gate-arrow" aria-hidden="true">→</span>
     <article class="gate-card gate-card--permission">
       <span class="gate-index">03 · PERMISSION</span>
       <h3>当前能否执行？</h3>
