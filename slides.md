@@ -432,10 +432,10 @@ layout: pitch-stage
 
 <header class="slide-header">
   <p class="eyebrow">WHY MORROW</p>
-  <h1>Case 承载过程，可信执行才是核心。</h1>
+  <h1>Case 承载过程，<br/>可信执行才是核心。</h1>
 </header>
 
-<div class="diff-grid">
+<div class="diff-grid diff-grid--compact">
   <article class="diff-card hover-lift">
     <span class="diff-tag diff-tag--blue">Execution ledger</span>
     <h3>Case 是运行账本</h3>
@@ -512,7 +512,6 @@ layout: pitch-stage
     <div class="demo-product">MOUSE · SCROLL WHEEL</div>
     <p class="chat-line chat-line--user">“鼠标滚轮坏了，今天必须给我换新。”</p>
     <p class="chat-line chat-line--agent">“我来帮你处理。先确认订单与序列号，再做一个 5 秒滚动测试。”</p>
-    <span class="dialogue-note">自然接住，但不预先承诺</span>
   </div>
 
   <div class="execution-gates">
@@ -534,10 +533,6 @@ layout: pitch-stage
       <p><b>L3 · Replacement</b></p>
       <p>规则满足后进入人工批准</p>
     </article>
-    <div class="execution-outcome">
-      <span>REPLACEMENT READY</span>
-      <b>Awaiting brand approval</b>
-    </div>
   </div>
 </div>
 
