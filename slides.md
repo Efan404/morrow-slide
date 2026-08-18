@@ -15,69 +15,43 @@ import './styles/index.css'
 <div class="deck-signature">@不知道起什么名字</div>
 
 <h1>Morrow</h1>
-<p class="cover-tagline">消费电子品牌的 AI 售后工单决策系统<br/>把每一次售后请求，变成品牌可确认的工单。</p>
+<p class="cover-tagline">产品交付后的事情，从这里开始。</p>
 <div class="cover-meta">
-  <span>Turn every after-sales request into a case the brand can act on.</span>
+  <span>After-sales, carried through.</span>
 </div>
-
-<!--
-01 · 封面。一句话定位，随后立刻进入开场故事。
--->
 
 ---
 layout: pitch-stage
 ---
 
-<!--
-02 · 开盒互动。第一次点击打开盒子并升起手机、充电线；第二次点击出现问号。主讲人停顿，问“还有呢？”。
--->
-
+<!-- 02 · 实体开箱。问完“还有什么”再点击。 -->
 <UnboxingScene />
 
 ---
 layout: pitch-stage
 ---
 
-<!--
-03 · 答案揭晓。点击后让产品说明书、保修卡与底部结论同时出现。
--->
-
+<!-- 03 · 说明书与保修卡。 -->
 <CareDocumentsScene />
 
 ---
 layout: pitch-stage
 ---
 
-<!--
-04 · 核心提问。先停顿让观众回想；点击后揭示 Morrow 对消费者与品牌两端的价值主张。
--->
-
-<section class="after-sales-question">
-  <p class="eyebrow">ONE SIMPLE QUESTION</p>
-  <p class="question-lead">那么 ——</p>
-  <h1>你现在还能找到<br/><span>手机的产品说明书与保修卡吗？</span></h1>
-
-  <div v-click class="after-sales-thesis">
-    <p class="thesis-line">找不到，不应该意味着售后从头开始。</p>
-    <div class="thesis-bridge">
-      <div class="thesis-benefit">
-        <small>FOR CONSUMERS</small>
-        <strong>重构消费者售后体验</strong>
-        <span>更容易找到入口、说明与保修状态</span>
-      </div>
-      <span class="thesis-plus">+</span>
-      <div class="thesis-benefit">
-        <small>FOR BRANDS</small>
-        <strong>降低品牌维护成本</strong>
-        <span>更少重复沟通，更清晰地处理每次请求</span>
-      </div>
-    </div>
+<!-- 04 · 从纸质物料到 Care Card。 -->
+<section class="card-thesis">
+  <p class="eyebrow">PRODUCT CARE</p>
+  <p class="card-thesis__dim">它们被认真地设计、印刷、装进包装盒。</p>
+  <h1>但未来，也许不再需要<br /><span>一本需要被保存的说明书。</span></h1>
+  <div class="card-thesis__card" v-click>
+    <small>MORROW · PRODUCT CARE</small>
+    <strong>说明、保修、售后入口。</strong>
+    <span>一碰就能开始。</span>
   </div>
 </section>
 
 <style scoped>
-.after-sales-question {
-  position: relative;
+.card-thesis {
   display: grid;
   align-content: center;
   justify-items: center;
@@ -85,591 +59,329 @@ layout: pitch-stage
   text-align: center;
 }
 
-.after-sales-question::before {
-  position: absolute;
-  z-index: -1;
-  top: 42%;
-  left: 50%;
-  color: rgba(0, 113, 227, 0.05);
-  content: "?";
-  font-size: 26rem;
-  font-weight: 760;
-  letter-spacing: -0.1em;
-  line-height: 0.7;
-  transform: translate(-50%, -50%);
-}
-
-.after-sales-question .eyebrow {
-  text-align: center;
-}
-
-.question-lead {
-  margin: 0 0 0.7rem;
-  color: var(--ae-ink-muted);
-  font-size: 1.2rem;
-  font-weight: 560;
-}
-
-.after-sales-question h1 {
+.card-thesis__dim {
   margin: 0;
+  color: var(--ae-ink-muted);
+  font-size: 1.12rem;
+}
+
+.card-thesis h1 {
+  margin: 0.85rem 0 0;
   color: var(--ae-ink);
-  font-size: clamp(2.4rem, 3.6vw, 3.35rem);
+  font-size: clamp(2.65rem, 4.3vw, 4rem);
   font-weight: 760;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.065em;
   line-height: 1.04;
 }
 
-.after-sales-question h1 span {
-  display: inline-block;
-  color: var(--ae-blue);
-  white-space: nowrap;
-}
+.card-thesis h1 span { color: var(--ae-blue); }
 
-.after-sales-thesis {
-  width: min(58rem, 94%);
-  margin-top: 2.35rem;
-  transition: opacity 360ms ease, transform 620ms var(--ae-ease), filter 620ms var(--ae-ease);
-}
-
-.after-sales-thesis.slidev-vclick-hidden {
-  opacity: 0;
-  filter: blur(0.35rem);
-  transform: translateY(1.1rem) scale(0.98);
-}
-
-.thesis-line {
-  margin: 0 0 1.1rem;
-  color: var(--ae-ink);
-  font-size: 1.16rem;
-  font-weight: 680;
-  letter-spacing: -0.02em;
-}
-
-.thesis-bridge {
+.card-thesis__card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  align-items: stretch;
-  gap: 1rem;
-}
-
-.thesis-benefit {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1.1rem 1.35rem;
-  border: 1px solid rgba(29, 29, 31, 0.1);
-  border-radius: var(--ae-radius-md);
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 1rem 2.6rem rgba(29, 29, 31, 0.08);
+  justify-items: start;
+  width: min(31rem, 76%);
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.55rem;
+  border: 1px solid rgba(0, 113, 227, 0.18);
+  border-radius: 1.35rem;
+  background: linear-gradient(135deg, #e8f2ff, #fff 72%);
+  box-shadow: 0 1.2rem 3.5rem rgba(0, 113, 227, 0.13);
   text-align: left;
-  backdrop-filter: blur(18px);
 }
 
-.thesis-benefit small {
-  color: var(--ae-blue);
-  font-size: 0.58rem;
-  font-weight: 780;
-  letter-spacing: 0.13em;
-}
-
-.thesis-benefit strong {
-  margin-top: 0.35rem;
-  color: var(--ae-ink);
-  font-size: 1.02rem;
-  font-weight: 730;
-}
-
-.thesis-benefit span {
-  margin-top: 0.35rem;
-  color: var(--ae-ink-muted);
-  font-size: 0.75rem;
-  line-height: 1.4;
-}
-
-.thesis-plus {
-  align-self: center;
-  color: var(--ae-blue);
-  font-size: 1.6rem;
-  font-weight: 520;
-}
+.card-thesis__card small { color: var(--ae-blue); font-size: 0.56rem; font-weight: 760; letter-spacing: 0.13em; }
+.card-thesis__card strong { margin-top: 0.52rem; color: var(--ae-ink); font-size: 1.28rem; letter-spacing: -0.035em; }
+.card-thesis__card span { margin-top: 0.35rem; color: var(--ae-ink-muted); font-size: 0.82rem; }
 </style>
 
 ---
 layout: pitch-stage
 ---
 
-<!--
-05 · 发卡！宣布角色转换：各位不再是评委，而是刚买了一只鼠标的消费者。任选故障场景，碰卡片完成退换货。
--->
-
-<section class="briefing">
-  <header>
-    <p class="eyebrow">LIVE DEMO</p>
-    <h1>现在，请各位<br/>当一次消费者。</h1>
-    <p>我们准备了一组真实消费电子售后里常见的故障场景。</p>
-  </header>
-  <ol class="checklist checklist--plain demo-steps">
-    <li v-click>
-      <span class="check">1</span>
-      <div><b>领取实体 Care Card</b><p>我们的队员正在发放</p></div>
-    </li>
-    <li v-click>
-      <span class="check">2</span>
-      <div><b>任选一个故障场景</b><p>真实售后中的常见故障</p></div>
-    </li>
-    <li v-click>
-      <span class="check">3</span>
-      <div><b>碰一下卡片</b><p>NFC 触发，进入品牌售后</p></div>
-    </li>
-    <li v-click>
-      <span class="check">4</span>
-      <div><b>完成一次退换货申请</b><p>体验完整链路，直到 Resolution</p></div>
-    </li>
-  </ol>
-</section>
-
-<style scoped>
-.demo-steps li {
-  opacity: 1;
-  clip-path: inset(0);
-  transform: translateY(0);
-  transition: clip-path 420ms var(--ae-ease), transform 520ms var(--ae-ease);
-}
-
-.demo-steps li.slidev-vclick-hidden {
-  visibility: hidden;
-  opacity: 1 !important;
-  clip-path: inset(0 0 100% 0);
-  transform: translateY(0.7rem);
-}
-</style>
+<!-- 05 · 评委体验；Supabase 新单计数驱动右下角气泡。 -->
+<LiveCareMission />
 
 ---
 layout: pitch-stage
 ---
 
-<!--
-06 · 章节页：互动结束，收束到正式路演。
--->
-
-<section class="section-marker">
-  <p class="eyebrow">SECTION 01 · BRAND &amp; VISION</p>
-  <h1>品牌与愿景</h1>
-  <span>The relationship is what comes after.</span>
-</section>
-
----
-layout: pitch-stage
----
-
-<!--
-07 · 商业故事：从刚才那张被遗忘的小卡片，讲到品牌背后一整套昂贵体系。三个痛点逐个点到，停顿在"预算紧"。
--->
-
-<header class="slide-header">
-  <p class="eyebrow">THE PROBLEM</p>
-  <h1>卖出之后，才是关系的开始。</h1>
-  <p class="slide-sub">刚才那张被遗忘的小卡片，对品牌来说，是一整套昂贵的体系。</p>
-</header>
-
-<div class="pain-grid">
-  <article class="pain-card hover-lift">
-    <div class="pain-head">
-      <span class="pain-num">01</span>
-      <h3>人力贵</h3>
-    </div>
-    <p>海外客服成本高、语言多、时区杂，7×24 小时覆盖几乎不可能。</p>
-  </article>
-  <article class="pain-card hover-lift">
-    <div class="pain-head">
-      <span class="pain-num">02</span>
-      <h3>流程散</h3>
-    </div>
-    <p>售后请求分散在邮件、聊天和表格里，无法追踪，更无法沉淀。</p>
-  </article>
-  <article class="pain-card hover-lift">
-    <div class="pain-head">
-      <span class="pain-num">03</span>
-      <h3>预算紧</h3>
-    </div>
-    <p>从零搭建完整售后系统成本巨大，但消费者期待的是专业体验。</p>
-  </article>
-</div>
-
----
-layout: pitch-stage
----
-
-<!--
-08 · 章节页：进入服务部分。
--->
-
-<section class="section-marker">
-  <p class="eyebrow">SECTION 02 · THE SERVICE</p>
-  <h1>提供的服务</h1>
-  <span>售后，是一种可直接接入的能力。</span>
-</section>
-
----
-layout: pitch-stage
----
-
-<!--
-09 · 方案总览。左侧定位，右侧四件事。强调：刚才评委完成的退换货，背后就是这四件事。
--->
-
-<section class="briefing">
-  <header>
-    <p class="eyebrow">THE SOLUTION</p>
-    <h1>售后，是一种<br/>可接入的能力。</h1>
-    <p>企业定义规则，复杂处理交给 Morrow。</p>
-  </header>
-  <ol class="checklist checklist--plain">
-    <li>
-      <span class="check">✓</span>
-      <div><b>受约束的执行</b><p>把消费者的请求转化为可验证事实与可执行状态</p></div>
-    </li>
-    <li>
-      <span class="check">✓</span>
-      <div><b>证据收集</b><p>通过 AI 客服或 Public API 收集凭证、序列号、故障信息</p></div>
-    </li>
-    <li>
-      <span class="check">✓</span>
-      <div><b>政策判定</b><p>根据品牌 Policy 自动判断退换 / 维修条件与下一步</p></div>
-    </li>
-    <li>
-      <span class="check">✓</span>
-      <div><b>品牌确认</b><p>判断结果推到 Console，品牌只做最后一道确认</p></div>
-    </li>
-  </ol>
-</section>
-
----
-layout: pitch-stage
----
-
-<!--
-10 · 链路回顾：快速带过，别逐格念。一句话："各位刚才碰的那张卡，走的就是这条路。"
--->
-
-<header class="slide-header">
-  <p class="eyebrow">HOW IT WORKS</p>
-  <h1>一条链路，从请求到 Resolution。</h1>
-</header>
-
-<FlowPipeline :steps="[
-  { num: '01', title: 'Support Entry', desc: '碰一下卡片，进入品牌售后' },
-  { num: '02', title: 'Case', desc: '对话变成可验证状态' },
-  { num: '03', title: 'Evidence', desc: '凭证、序列号，来源可溯' },
-  { num: '04', title: 'Policy', desc: '品牌政策决定下一步' },
-  { num: '05', title: 'Resolution', desc: '换新 + 人工审批' },
-  { num: '06', title: 'Console', desc: '品牌看到同一张 Case' },
-]" />
-
-<p class="center-note">Case 是运行账本，<b>可信执行才是价值。</b></p>
-
-<style scoped>
-.center-note {
-  margin: 2.2rem 0 0;
-  text-align: center;
-  color: var(--ae-ink-muted);
-  font-size: 0.95rem;
-}
-
-.center-note .note-em {
-  margin-left: 0.6rem;
-  color: var(--ae-blue);
-  font-weight: 650;
-}
-</style>
-
----
-layout: pitch-stage
----
-
-<!--
-11 · 证据与信任：这是与"AI 客服"区分的关键页。讲清"不编置信度"，最后一句点出 AI 与规则的分工。
--->
-
-<header class="slide-header">
-  <p class="eyebrow">EVIDENCE, NOT CONFIDENCE</p>
-  <h1>不用「AI 有 87% 把握」，用证据说话。</h1>
-  <p class="slide-sub">「用户说了」≠「已经验证」。每条 Evidence 都有类型、数值、来源与状态。</p>
-</header>
-
-<EvidenceBadges :items="[
-  { status: 'verified', label: 'VERIFIED', desc: '已验证，可作为决策依据' },
-  { status: 'supported', label: 'SUPPORTED', desc: '有佐证，可支撑判断' },
-  { status: 'claimed', label: 'CLAIMED', desc: '用户声称，待验证' },
-  { status: 'missing', label: 'MISSING', desc: '缺失，需要继续收集' },
-  { status: 'conflicted', label: 'CONFLICTED', desc: '相互冲突，转人工审核' },
-  { status: 'invalid', label: 'INVALID', desc: '无效，不可采用' },
-]" />
-
-<p class="center-note">AI 负责理解与沟通，<b>规则负责边界</b>。</p>
-
-<style scoped>
-.center-note {
-  margin: 1.8rem 0 0;
-  text-align: center;
-  color: var(--ae-ink-muted);
-  font-size: 1rem;
-}
-
-.center-note b {
-  color: var(--ae-ink);
-  font-weight: 680;
-}
-</style>
-
----
-layout: pitch-stage
----
-
-<!--
-12 · 现有能力收束。Case 降为运行账本，可信执行升为核心价值。
--->
-
-<header class="slide-header">
-  <p class="eyebrow">WHY MORROW</p>
-  <h1>Case 承载过程，<br/>可信执行才是核心。</h1>
-</header>
-
-<div class="diff-grid diff-grid--compact">
-  <article class="diff-card hover-lift">
-    <span class="diff-tag diff-tag--blue">Execution ledger</span>
-    <h3>Case 是运行账本</h3>
-    <p>承载授权、证据、政策结果与处理记录，让每个动作都有依据可复核。</p>
-  </article>
-  <article class="diff-card hover-lift">
-    <span class="diff-tag diff-tag--green">Optional AI</span>
-    <h3>AI 客服是可选项</h3>
-    <p>用 Morrow 托管 AI，或只用工单系统、通过 Public API 接入自己的客服与 Agent。</p>
-  </article>
-  <article class="diff-card hover-lift">
-    <span class="diff-tag diff-tag--purple">Evidence-based</span>
-    <h3>证据驱动决策</h3>
-    <p>不使用未经校准的置信度。已知什么、来自哪里、还缺什么，显式可查。</p>
-  </article>
-  <article class="diff-card hover-lift">
-    <span class="diff-tag diff-tag--orange">Human in the loop</span>
-    <h3>高风险动作人工审批</h3>
-    <p>Replacement 等高权限动作进入 REVIEW，由 Console 人工 Approve / Reject。</p>
-  </article>
-</div>
-
----
-layout: pitch-stage
----
-
-<!--
-13 · 回答评委最直接的问题：为什么企业不能直接接一个大模型客服？先讲风险，再给出系统边界。
--->
-
-<header class="slide-header">
-  <p class="eyebrow">GENERIC AI vs. MORROW</p>
-  <h1>大模型会回答，<br/>企业需要它被授权地行动。</h1>
-</header>
-
-<div class="execution-compare">
-  <article class="compare-panel compare-panel--generic">
-    <span class="compare-kicker">Generic AI Agent</span>
-    <h3>会共情，也可能越过边界</h3>
-    <ul>
-      <li>用户陈述、图片、订单信息混在同一段上下文里</li>
-      <li>模型的“建议”可能被用户理解为退款或换新承诺</li>
-      <li>人工接手时，仍要从头翻聊天记录、重新核实</li>
-    </ul>
-  </article>
-  <article class="compare-panel compare-panel--morrow">
-    <span class="compare-kicker">Morrow Execution Agent</span>
-    <h3>AI 服务，系统决定能做什么</h3>
-    <ul>
-      <li>AI 负责理解、共情、追问与解释</li>
-      <li>Evidence 把用户陈述转成可验证事实</li>
-      <li>Policy + Permission 决定下一步能否执行</li>
-    </ul>
-  </article>
-</div>
-
-<p class="execution-principle">Morrow 不问“AI 有多自信”，只问：<b>证据成立吗？政策允许吗？权限足够吗？</b></p>
-
----
-layout: pitch-stage
----
-
-<!--
-14 · 30 秒鼠标 Demo 讲解页。按从左到右的顺序讲，不在 AI 对话上停留：重点是三道执行闸门。
--->
-
-<header class="slide-header">
-  <p class="eyebrow">LIVE DECISION · MOUSE DEMO</p>
-  <h1>AI 像人一样服务，<br/>但必须像制度一样执行。</h1>
-</header>
-
-<div class="mouse-execution">
-  <div class="demo-dialogue">
-    <div class="demo-product">MOUSE · SCROLL WHEEL</div>
-    <p class="chat-line chat-line--user">“滚轮失灵，今天必须换新。”</p>
-    <p class="chat-line chat-line--agent">“我来处理。先核对订单、序列号，再做 5 秒滚动测试。”</p>
+<!-- 06 · 第一张售后单的交接。 -->
+<section class="case-handoff">
+  <div class="case-handoff__copy">
+    <p class="eyebrow">THE HANDOFF</p>
+    <h1>你刚才提交的，<br /><span>已经进了品牌后台。</span></h1>
+    <p>消费者的一段对话，已经是一张品牌可以处理的售后单。</p>
   </div>
+  <div class="case-handoff__flow" aria-label="消费者端到品牌端的售后交接">
+    <div class="handoff-node"><small>CONSUMER</small><strong>一次售后申请</strong></div>
+    <span class="handoff-arrow" aria-hidden="true">→</span>
+    <div class="handoff-node handoff-node--blue"><small>MORROW</small><strong>一张售后单</strong></div>
+    <span class="handoff-arrow" aria-hidden="true">→</span>
+    <div class="handoff-node"><small>BRAND</small><strong>品牌开始处理</strong></div>
+  </div>
+</section>
 
-  <div class="execution-gates">
-    <article class="gate-card gate-card--evidence">
-      <span class="gate-index">01 · EVIDENCE</span>
-      <h3>事实是否成立？</h3>
-      <p><b class="status-mini status-mini--verified">VERIFIED</b> 订单 / 序列号</p>
-      <p><b class="status-mini status-mini--supported">SUPPORTED</b> 5 秒滚动测试</p>
+<style scoped>
+.case-handoff { display: grid; align-content: center; justify-items: center; min-height: 100%; text-align: center; }
+.case-handoff .eyebrow { text-align: center; }
+.case-handoff h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.7rem, 4.45vw, 4rem); font-weight: 750; letter-spacing: -0.065em; line-height: 1.03; }
+.case-handoff h1 span { color: var(--ae-blue); }
+.case-handoff__copy > p:not(.eyebrow) { margin: 1.2rem 0 0; color: var(--ae-ink-muted); font-size: 1.05rem; }
+.case-handoff__flow { display: flex; align-items: center; justify-content: center; gap: 1.1rem; margin-top: 3rem; }
+.handoff-node { display: grid; gap: 0.36rem; min-width: 10.5rem; padding: 1.2rem 1.3rem; border: 1px solid var(--ae-line); border-radius: 1.2rem; background: rgba(255, 255, 255, 0.76); box-shadow: 0 0.8rem 2rem rgba(29, 29, 31, 0.07); text-align: left; }
+.handoff-node small { color: var(--ae-ink-muted); font-size: 0.54rem; font-weight: 750; letter-spacing: 0.12em; }
+.handoff-node strong { color: var(--ae-ink); font-size: 1.03rem; font-weight: 710; letter-spacing: -0.025em; }
+.handoff-node--blue { border-color: rgba(0, 113, 227, 0.28); background: linear-gradient(145deg, rgba(235, 246, 255, 0.98), rgba(255, 255, 255, 0.92)); }
+.handoff-node--blue small { color: var(--ae-blue); }
+.handoff-arrow { color: var(--ae-blue); font-size: 1.7rem; font-weight: 430; }
+</style>
+
+---
+layout: pitch-stage
+---
+
+<!-- 07 · 说明这张售后单为什么能被品牌处理。 -->
+<section class="case-contents">
+  <header>
+    <p class="eyebrow">WHAT JUST ENTERED THE BACKEND</p>
+    <h1>一段对话，先变成<br /><span>一张可以处理的申请。</span></h1>
+    <p>不是提醒品牌“有人来问了”，而是把做决定需要的东西放到一起。</p>
+  </header>
+  <div class="case-contents__grid">
+    <article><small>01 · 哪个产品</small><strong>型号、订单、序列号</strong></article>
+    <article><small>02 · 出了什么问题</small><strong>故障描述、图片或视频</strong></article>
+    <article><small>03 · 用户想怎么解决</small><strong>维修、换新或退款</strong></article>
+    <article class="case-contents__decision"><small>04 · 品牌怎么处理</small><strong>核对保修规则，需要时人工审核</strong></article>
+  </div>
+  <p class="case-contents__line">信息在同一张单里，消费者不用反复说，品牌也不用重新找。</p>
+</section>
+
+<style scoped>
+.case-contents { display: grid; align-content: center; min-height: 100%; }
+.case-contents h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.65rem, 4.15vw, 3.65rem); font-weight: 750; letter-spacing: -0.064em; line-height: 1.04; }
+.case-contents h1 span { color: var(--ae-blue); }
+.case-contents header > p:not(.eyebrow) { margin: 0.9rem 0 0; color: var(--ae-ink-muted); font-size: 1.03rem; }
+.case-contents__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.8rem; margin-top: 2.7rem; }
+.case-contents__grid article { min-height: 9.4rem; padding: 1.25rem 1.05rem; border: 1px solid var(--ae-line); border-radius: 1.15rem; background: rgba(255,255,255,.72); }
+.case-contents__grid small { display: block; color: var(--ae-blue); font-size: .56rem; font-weight: 760; letter-spacing: .1em; }
+.case-contents__grid strong { display: block; margin-top: .85rem; color: var(--ae-ink); font-size: 1.05rem; font-weight: 710; letter-spacing: -.035em; line-height: 1.26; }
+.case-contents__decision { border-color: rgba(0,113,227,.32) !important; background: linear-gradient(145deg,#e8f2ff,#fff) !important; }
+.case-contents__line { margin: 1.6rem 0 0; color: var(--ae-ink-muted); font-size: .9rem; text-align: center; }
+</style>
+
+---
+layout: pitch-stage
+---
+
+<!-- 08 · 解释产品的分界：回复问题与完成一件售后是两回事。 -->
+<section class="finish-contrast">
+  <header>
+    <p class="eyebrow">THE DIFFERENCE</p>
+    <h1>客服把话说完，<br /><span>不等于售后被处理。</span></h1>
+  </header>
+  <div class="finish-contrast__paths">
+    <article class="finish-contrast__path finish-contrast__path--grey">
+      <small>只停在对话里</small>
+      <strong>回复一次问题</strong>
+      <p>订单、图片、规则和处理结果，仍然散在不同的人和地方。</p>
     </article>
-    <span class="gate-arrow" aria-hidden="true">→</span>
-    <article class="gate-card gate-card--policy">
-      <span class="gate-index">02 · POLICY</span>
-      <h3>企业是否允许？</h3>
-      <p>在保修期内</p>
-      <p>型号匹配 · 故障充分</p>
-    </article>
-    <span class="gate-arrow" aria-hidden="true">→</span>
-    <article class="gate-card gate-card--permission">
-      <span class="gate-index">03 · PERMISSION</span>
-      <h3>当前能否执行？</h3>
-      <p><b>L3 · Replacement</b></p>
-      <p>规则满足后进入人工批准</p>
+    <i aria-hidden="true">→</i>
+    <article class="finish-contrast__path finish-contrast__path--blue">
+      <small>MORROW 继续往下走</small>
+      <strong>把这件售后推进到结果</strong>
+      <p>问齐信息 → 留下售后单 → 核对条件 → 品牌给出结果</p>
     </article>
   </div>
-</div>
-
----
-layout: pitch-stage
----
-
-<!--
-15 · 授权模型。L0-L4 是风险边界的解释框架；现场 Demo 展示 L0/L1 自动服务、L3 审批与 L4 转人工。
--->
-
-<header class="slide-header">
-  <p class="eyebrow">PERMISSION · L0–L4</p>
-  <h1>权限不是一个开关，<br/>而是一条风险梯度。</h1>
-</header>
-
-<div class="permission-ladder">
-  <article class="permission-level permission-level--auto">
-    <span>L0</span><b>说明与查询</b><small>AI 自动</small>
-  </article>
-  <article class="permission-level permission-level--auto">
-    <span>L1</span><b>收集材料<br/>创建申请</b><small>AI 自动</small>
-  </article>
-  <article class="permission-level permission-level--bounded">
-    <span>L2</span><b>维修发起<br/>低风险补偿</b><small>规则内执行</small>
-  </article>
-  <article class="permission-level permission-level--approval">
-    <span>L3</span><b>换新等<br/>高影响动作</b><small>政策满足 + 人工批准</small>
-  </article>
-  <article class="permission-level permission-level--human">
-    <span>L4</span><b>高金额 · 冲突<br/>疑似欺诈</b><small>转人工处理</small>
-  </article>
-</div>
-
-<p class="permission-summary"><span>MVP 现场演示</span> L0/L1 自动服务 → L3 换新审批；证据冲突时直接进入 L4 人工复核。</p>
-
----
-layout: pitch-stage
----
-
-<!--
-16 · 章节页：进入商业部分。
--->
-
-<section class="section-marker">
-  <p class="eyebrow">SECTION 03 · BUSINESS</p>
-  <h1>商业与 B 端</h1>
-  <span>从一次 Demo，到一门生意。</span>
-</section>
-
----
-layout: pitch-stage
----
-
-<!--
-17 · 商业模式。两种接入方式：只用工单底座（API），或全托管（AI + Console + Care Card）。
--->
-
-<header class="slide-header">
-  <p class="eyebrow">BUSINESS</p>
-  <h1>两种接入，一个底座。</h1>
-  <p class="slide-sub">目标客户：正在出海的消费电子品牌 —— 工单量大、人力贵、预算有限。</p>
-</header>
-
-<div class="diff-grid">
-  <article class="diff-card hover-lift">
-    <span class="diff-tag diff-tag--blue">API 接入</span>
-    <h3>只用工单底座</h3>
-    <p>品牌保留自有客服或 AI Agent，通过 Public API 接入 Case、Evidence 与 Policy，按调用量计费。</p>
-  </article>
-  <article class="diff-card hover-lift">
-    <span class="diff-tag diff-tag--green">全托管</span>
-    <h3>AI 客服 + Console</h3>
-    <p>Morrow 托管 AI 入口与审批台，Care Card 打通线下交付场景，按品牌订阅。</p>
-  </article>
-</div>
-
----
-layout: pitch-stage
----
-
-<!--
-18 · B 端展示。讲完切到 Console 现场演示：评委刚才产生的 Case，出现在企业端。
--->
-
-<section class="briefing">
-  <header>
-    <p class="eyebrow">CONSOLE · B 端</p>
-    <h1>企业端，<br/>看到同一张 Case。</h1>
-    <p>刚才各位产生的售后请求，已经成为企业可处理的一张真实工单。</p>
-    <p class="console-cta">接下来 → 切换 Console，现场演示同一张 Case。</p>
-  </header>
-  <ol class="checklist checklist--plain">
-    <li>
-      <span class="check">✓</span>
-      <div><b>Case 列表与状态</b><p>从 CREATED 到 RESOLVED 全程可视</p></div>
-    </li>
-    <li>
-      <span class="check">✓</span>
-      <div><b>事实与 Evidence</b><p>每条信息的来源与验证状态</p></div>
-    </li>
-    <li>
-      <span class="check">✓</span>
-      <div><b>缺失信息提示</b><p>还缺什么，一目了然</p></div>
-    </li>
-    <li>
-      <span class="check">✓</span>
-      <div><b>Approve / Reject</b><p>高权限动作由人工复核</p></div>
-    </li>
-  </ol>
+  <p class="finish-contrast__line">Morrow 不在比谁更会聊天。<b>我们让品牌少漏掉一件需要处理的售后。</b></p>
 </section>
 
 <style scoped>
-.console-cta {
-  margin: 1.4rem 0 0;
-  color: var(--ae-blue);
-  font-size: 0.9rem;
-  font-weight: 650;
-}
+.finish-contrast { display: grid; align-content: center; min-height: 100%; }
+.finish-contrast h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.8rem,4.35vw,3.85rem); font-weight: 750; letter-spacing: -.066em; line-height: 1.03; }
+.finish-contrast h1 span { color: var(--ae-blue); }
+.finish-contrast__paths { display: grid; grid-template-columns: minmax(16rem,1fr) 3.5rem minmax(16rem,1fr); align-items: center; gap: 1.2rem; margin-top: 2.7rem; }
+.finish-contrast__path { min-height: 10.5rem; padding: 1.5rem 1.65rem; border: 1px solid var(--ae-line); border-radius: 1.25rem; background: rgba(255,255,255,.72); }
+.finish-contrast__path small { color: var(--ae-ink-muted); font-size: .58rem; font-weight: 760; letter-spacing: .11em; }
+.finish-contrast__path strong { display: block; margin-top: .72rem; color: var(--ae-ink); font-size: 1.33rem; font-weight: 730; letter-spacing: -.045em; }
+.finish-contrast__path p { margin: .72rem 0 0; color: var(--ae-ink-muted); font-size: .84rem; line-height: 1.5; }
+.finish-contrast__paths > i { color: var(--ae-blue); font-size: 2rem; font-style: normal; text-align: center; }
+.finish-contrast__path--grey { opacity: .62; }
+.finish-contrast__path--blue { border-color: rgba(0,113,227,.32); background: linear-gradient(145deg,#e8f2ff,#fff); }
+.finish-contrast__path--blue small { color: var(--ae-blue); }
+.finish-contrast__line { margin: 1.75rem 0 0; color: var(--ae-ink-muted); font-size: .94rem; text-align: center; }
+.finish-contrast__line b { color: var(--ae-ink); }
 </style>
 
 ---
 layout: pitch-stage
 ---
 
-<!--
-19 · 收尾。一句 tagline，鞠躬，进入评委提问。
--->
+<!-- 09 · 同一张售后单在品牌端审批。Supabase 更新计数触发蓝色结果条。 -->
+<LiveResolutionMoment />
 
-<section class="thank-you">
+---
+layout: pitch-stage
+---
+
+<!-- 10 · 用刚才发生的事件证明 MVP 的完整链路。 -->
+<section class="build-proof">
+  <header>
+    <p class="eyebrow">WHAT YOU JUST SAW</p>
+    <h1>这不是一张流程图。<br />刚才那条申请，已经走完了这条链路。</h1>
+  </header>
+  <div class="build-proof__columns">
+    <article><small>CARE CARD</small><strong>碰一下，进入售后</strong><p>实体卡 / 网页入口<br />选择场景，开始对话</p></article>
+    <i>→</i>
+    <article class="build-proof__core"><small>MORROW CASE</small><strong>一张持续更新的售后单</strong><p>收集材料<br />保存状态与处理条件</p></article>
+    <i>→</i>
+    <article><small>BRAND CONSOLE</small><strong>品牌审核并给出结果</strong><p>查看申请<br />换新结果同步给消费者</p></article>
+  </div>
+  <div class="build-proof__checks"><span>✓ 对话推进申请</span><span>✓ 售后单状态流转</span><span>✓ 订单、序列号、图片</span><span>✓ 换新规则核对</span><span>✓ 人工审核</span></div>
+</section>
+
+<style scoped>
+.build-proof { display: grid; align-content: center; min-height: 100%; }
+.build-proof h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.03; }
+.build-proof__columns { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: 3rem; }
+.build-proof__columns article { width: min(16.5rem, 28vw); padding: 1.5rem; border: 1px solid var(--ae-line); border-radius: 1.35rem; background: rgba(255, 255, 255, 0.72); box-shadow: 0 1rem 2.4rem rgba(29, 29, 31, 0.07); }
+.build-proof__columns article small { color: var(--ae-ink-muted); font-size: 0.54rem; font-weight: 760; letter-spacing: 0.12em; }
+.build-proof__columns article strong { display: block; margin-top: 0.75rem; color: var(--ae-ink); font-size: 1.28rem; font-weight: 730; letter-spacing: -0.04em; }
+.build-proof__columns article p { margin: 0.7rem 0 0; color: var(--ae-ink-muted); font-size: 0.84rem; line-height: 1.55; }
+.build-proof__columns > i { color: var(--ae-blue); font-size: 1.45rem; font-style: normal; }
+.build-proof__core { border-color: rgba(0, 113, 227, 0.3) !important; background: linear-gradient(145deg, #e8f2ff, #fff) !important; }
+.build-proof__core small { color: var(--ae-blue) !important; }
+.build-proof__checks { display: flex; flex-wrap: wrap; gap: 0.75rem 1.3rem; justify-content: center; margin-top: 2rem; color: var(--ae-ink-muted); font-size: 0.72rem; }
+.build-proof__checks span::first-letter { color: var(--ae-blue); }
+</style>
+
+---
+layout: pitch-stage
+---
+
+<!-- 11 · 后半段的记忆点：人机协同的可验证效率证据。 -->
+<section class="productivity-proof">
+  <div class="productivity-proof__copy">
+    <p class="eyebrow">WHY A BRAND CARES</p>
+    <h1>当 AI 先把重复工作接住，<br /><span>人工才能去处理真正需要判断的售后。</span></h1>
+    <p>这不是“让 AI 替人拍板”。它是让品牌把人的时间，留给换新、退款和例外情况。</p>
+  </div>
+  <div class="productivity-proof__number">
+    <small>CUSTOMER SUPPORT STUDY</small>
+    <strong>34%</strong>
+    <p>经验较少的客服获得 AI 辅助后，<br />每小时处理问题的提升</p>
+  </div>
+  <p class="productivity-proof__source">研究对象：5,179 名客户支持人员；NBER《Generative AI at Work》，2023。34% 为经验较少客服的研究结果，不是 Morrow 当前承诺的节省比例。</p>
+</section>
+
+<style scoped>
+.productivity-proof { position: relative; display: grid; grid-template-columns: minmax(24rem,1.08fr) minmax(19rem,.72fr); align-items: center; gap: clamp(3rem,8vw,8rem); min-height: 100%; }
+.productivity-proof__copy h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.5rem,3.95vw,3.55rem); font-weight: 750; letter-spacing: -.063em; line-height: 1.04; }
+.productivity-proof__copy h1 span { color: var(--ae-blue); }
+.productivity-proof__copy > p:not(.eyebrow) { max-width: 29rem; margin: 1.25rem 0 0; color: var(--ae-ink-muted); font-size: 1.01rem; line-height: 1.55; }
+.productivity-proof__number { padding: 1.45rem 0 1.3rem 2.8rem; border-left: 1px solid var(--ae-line); }
+.productivity-proof__number small { color: var(--ae-blue); font-size: .57rem; font-weight: 770; letter-spacing: .12em; }
+.productivity-proof__number strong { display: block; margin-top: .35rem; color: var(--ae-blue); font-size: clamp(6.8rem,12vw,10rem); font-weight: 770; letter-spacing: -.11em; line-height: .82; }
+.productivity-proof__number p { margin: 1.1rem 0 0; color: var(--ae-ink); font-size: 1rem; font-weight: 650; line-height: 1.42; }
+.productivity-proof__source { position: absolute; right: 0; bottom: 0; left: 0; margin: 0; color: #949499; font-size: .54rem; line-height: 1.4; }
+</style>
+
+---
+layout: pitch-stage
+---
+
+<!-- 12 · 从刚才那种复杂、需要判断的售后开始。 -->
+<section class="first-customers">
+  <header>
+    <p class="eyebrow">WHERE WE START</p>
+    <h1>我们先从这类电子品牌开始。</h1>
+    <p>它们不是没有客服，而是每一件售后都开始需要判断和交接。</p>
+  </header>
+  <div class="first-customers__reasons">
+    <span>型号和保修规则变多</span><i>+</i>
+    <span>订单、序列号、证据要核对</span><i>+</i>
+    <span>售后结果影响口碑和成本</span>
+  </div>
+  <p class="first-customers__answer">它们需要把“客户说了什么”变成“品牌接下来要做什么”，<b>但不想自己从零搭系统。</b></p>
+</section>
+
+<style scoped>
+.first-customers { display: grid; align-content: center; justify-items: center; min-height: 100%; text-align: center; }
+.first-customers .eyebrow { text-align: center; }
+.first-customers h1 { margin: 0; color: var(--ae-ink); font-size: clamp(3rem, 4.7vw, 4.1rem); font-weight: 750; letter-spacing: -0.068em; }
+.first-customers header > p:not(.eyebrow) { margin: 0.75rem 0 0; color: var(--ae-ink-muted); font-size: 1.12rem; }
+.first-customers__reasons { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.8rem; max-width: 55rem; margin-top: 2.8rem; }
+.first-customers__reasons span { padding: 0.72rem 1rem; border: 1px solid var(--ae-line); border-radius: 999px; color: var(--ae-ink); background: rgba(255, 255, 255, 0.7); font-size: 0.88rem; font-weight: 620; }
+.first-customers__reasons i { color: var(--ae-blue); font-size: 1.05rem; font-style: normal; }
+.first-customers__answer { margin: 2rem 0 0; color: var(--ae-ink-muted); font-size: 1.05rem; }
+.first-customers__answer b { color: var(--ae-ink); }
+</style>
+
+---
+layout: pitch-stage
+---
+
+<!-- 13 · 让商业路径回答「先怎么卖」。 -->
+<section class="business-ladder">
+  <header><p class="eyebrow">HOW WE START SELLING</p><h1>第一阶段，我们先把品牌的<br />售后接起来，再收服务费。</h1></header>
+  <div class="business-ladder__steps">
+    <article><small>01 · 接入</small><strong>把入口和规则接进来</strong><p>Care Card / 网页入口，产品信息与保修条件。</p></article>
+    <i>→</i>
+    <article class="business-ladder__focus"><small>02 · 服务</small><strong>按品牌持续提供售后系统</strong><p>AI 收集信息，后台让品牌处理与更新规则。</p></article>
+    <i>→</i>
+    <article><small>03 · 标准化</small><strong>把成熟流程做成模板</strong><p>以后让更多小品牌直接启用，再按需扩展。</p></article>
+  </div>
+  <p>先做难一点、价值更高的品牌售后；成熟之后，<b>再把可靠的做法交给更多品牌。</b></p>
+</section>
+
+<style scoped>
+.business-ladder { display: grid; align-content: center; min-height: 100%; }
+.business-ladder h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.5rem, 3.9vw, 3.4rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.04; }
+.business-ladder__steps { display: flex; align-items: stretch; gap: 1.1rem; margin-top: 3rem; }
+.business-ladder__steps article { flex: 1; min-height: 10rem; padding: 1.35rem 1.45rem; border: 1px solid var(--ae-line); border-radius: 1.25rem; background: rgba(255,255,255,.72); }
+.business-ladder__steps small { color: var(--ae-blue); font-size: .56rem; font-weight: 760; letter-spacing: .12em; }
+.business-ladder__steps strong { display: block; margin-top: .72rem; color: var(--ae-ink); font-size: 1.12rem; font-weight: 720; letter-spacing: -.035em; line-height: 1.18; }
+.business-ladder__steps p { margin: .66rem 0 0; color: var(--ae-ink-muted); font-size: .82rem; line-height: 1.5; }
+.business-ladder__steps > i { align-self: center; color: var(--ae-blue); font-size: 1.3rem; font-style: normal; }
+.business-ladder__focus { border-color: rgba(0,113,227,.32) !important; background: linear-gradient(145deg,#e8f2ff,#fff) !important; }
+.business-ladder > p { margin: 1.75rem 0 0; color: var(--ae-ink-muted); font-size: .87rem; text-align: center; }
+.business-ladder > p b { color: var(--ae-ink); }
+</style>
+
+---
+layout: pitch-stage
+---
+
+<!-- 14 · 愿景只基于前面已经说明的服务关系。 -->
+<section class="stripe-analogy">
+  <p>Stripe 让商家不必从零搭一套支付系统。</p>
+  <h1>Morrow 想做的，是让品牌也不必从零搭<br /><span>一整套售后系统。</span></h1>
+  <div><span>对消费者，一碰就能开始售后。</span><i>·</i><span>对品牌，一套能把售后处理下去的系统。</span></div>
+</section>
+
+<style scoped>
+.stripe-analogy { display: grid; align-content: center; justify-items: center; min-height: 100%; text-align: center; }
+.stripe-analogy > p { margin: 0; color: var(--ae-ink-muted); font-size: 1.3rem; font-weight: 560; }
+.stripe-analogy h1 { margin: 1rem 0 0; color: var(--ae-ink); font-size: clamp(2.65rem, 4.3vw, 4rem); font-weight: 760; letter-spacing: -.067em; line-height: 1.04; }
+.stripe-analogy h1 span { color: var(--ae-blue); }
+.stripe-analogy div { display: flex; gap: .85rem; justify-content: center; margin-top: 2.25rem; color: var(--ae-ink-muted); font-size: .92rem; }
+.stripe-analogy i { color: var(--ae-blue); font-style: normal; }
+</style>
+
+---
+layout: pitch-stage
+---
+
+<!-- 15 · 收束回到观众刚刚体验到的事。 -->
+<section class="morrow-close">
   <p class="eyebrow">MORROW</p>
-  <h1>After-sales decisions,<br/>made effortless.</h1>
-  <p class="tagline">把每一次售后请求，变成品牌可确认的工单。</p>
-  <div class="cta-row">
-    <span class="cta-btn cta-btn--primary">现场 Demo · Demo Brand</span>
-    <span class="cta-btn cta-btn--secondary">After-sales powered by Morrow</span>
-  </div>
+  <h1>别只把话聊完。<br /><span>把售后做完。</span></h1>
+  <p>The relationship is what comes after.</p>
 </section>
+
+<style scoped>
+.morrow-close { display: grid; align-content: center; justify-items: center; min-height: 100%; text-align: center; }
+.morrow-close .eyebrow { text-align: center; }
+.morrow-close h1 { margin: 0; color: var(--ae-ink); font-size: clamp(3.4rem, 5.6vw, 4.9rem); font-weight: 760; letter-spacing: -.078em; line-height: .98; }
+.morrow-close h1 span { color: var(--ae-blue); }
+.morrow-close > p:not(.eyebrow) { margin: 1.65rem 0 0; color: var(--ae-ink-muted); font-size: 1rem; font-weight: 560; }
+</style>
