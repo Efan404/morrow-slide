@@ -17,18 +17,18 @@ pnpm export   # 导出 PDF（需要 playwright-chromium）
 - `slides.md` — 15 页路演：实体开箱 → Care Card 体验 → 售后单进入品牌后台 → 服务、技术与商业逻辑 → 收束
 - `styles/` — 设计令牌、动效、全局版式
 - `layouts/` — `pitch-stage`（标准白底页）、`cover-stage`（封面渐变）
-- `components/` — 现场体验、售后单气泡、品牌审核结果，以及开箱互动组件
+- `components/` — 现场体验、工单提交通知、品牌审核结果，以及开箱互动组件
 
 ## 现场售后单联动
 
-任务页的 `LiveCasePulse` 与品牌端页的 `LiveResolutionMoment` 读取 Supabase 的安全展示信号：
+任务页的 `WorkOrderToast` 与品牌端页的 `LiveResolutionMoment` 读取 Supabase 的展示信号：
 
 - 消费者提交一张 `cases` 记录时，数据库触发器写入一个**不含订单、邮箱、原始问题文本**的展示信号；
 - PPT 轮询 `presentation-pulse-count` Edge Function，只得到“提交数 / 已处理数”的聚合计数；
-- 提交数增加时，任务页弹出“新的售后申请已接入品牌后台”；
+- 提交数增加时，任务页在右上角弹出“工单 #MO-001 提交成功”，并提示已进入系统后台；
 - 当同一张售后单更新为 `RESOLVED` / `APPROVED`，或已有 `resolution` 时，品牌端页显示“换新申请已通过”的蓝色结果条。
 
-默认连接地址已经写入组件；如果需要连接另一个环境，可覆盖：
+默认连接地址已经写入两个组件；如果需要连接另一个环境，可在未提交的 `.env.local` 中覆盖：
 
 ```bash
 VITE_MORROW_PRESENTATION_PULSE_URL=https://<supabase-project>.supabase.co/functions/v1/presentation-pulse-count

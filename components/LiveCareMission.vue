@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LiveCasePulse from './LiveCasePulse.vue'
+import WorkOrderToast from './WorkOrderToast.vue'
 </script>
 
 <template>
@@ -26,7 +26,7 @@ import LiveCasePulse from './LiveCasePulse.vue'
         <small>提交后，请停在结果页。</small>
       </div>
 
-      <LiveCasePulse />
+      <WorkOrderToast />
     </div>
   </section>
 </template>

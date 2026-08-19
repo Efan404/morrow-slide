@@ -5,7 +5,7 @@ import test from 'node:test'
 const missionSource = await readFile(new URL('../components/LiveCareMission.vue', import.meta.url), 'utf8')
 const unboxingSource = await readFile(new URL('../components/UnboxingScene.vue', import.meta.url), 'utf8')
 
-test('reveals the problem before the instruction and live feed group', () => {
+test('reveals the problem before the instruction and work-order toast group', () => {
   const problemIndex = missionSource.indexOf('<p v-click class="care-mission__context">')
   const demoIndex = missionSource.indexOf('<div v-click class="care-mission__demo">')
 
@@ -14,7 +14,7 @@ test('reveals the problem before the instruction and live feed group', () => {
 
   const demoMarkup = missionSource.slice(demoIndex, missionSource.indexOf('</template>'))
   assert.match(demoMarkup, />INSTRUCTION</)
-  assert.match(demoMarkup, /<LiveCasePulse \/>/)
+  assert.match(demoMarkup, /<WorkOrderToast \/>/)
 })
 
 test('uses the interactive customer scenario copy', () => {

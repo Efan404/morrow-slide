@@ -98,7 +98,7 @@ layout: pitch-stage
 layout: pitch-stage
 ---
 
-<!-- 05 · 评委体验；Supabase 新单计数驱动右下角气泡。 -->
+<!-- 05 · 评委体验；Supabase 新单计数驱动右上角工单通知。 -->
 <LiveCareMission />
 
 ---
@@ -109,7 +109,7 @@ layout: pitch-stage
 <section class="case-handoff">
   <div class="case-handoff__copy">
     <p class="eyebrow">THE HANDOFF</p>
-    <h1>你刚才提交的，<br /><span>已经进了品牌后台。</span></h1>
+    <h1>你刚才提交的，<br /><span>已经进了系统后台。</span></h1>
     <p>消费者的一段对话，已经是一张品牌可以处理的售后单。</p>
   </div>
   <div class="case-handoff__flow" aria-label="消费者端到品牌端的售后交接">
@@ -227,30 +227,31 @@ layout: pitch-stage
 <section class="build-proof">
   <header>
     <p class="eyebrow">WHAT YOU JUST SAW</p>
-    <h1>这不是一张流程图。<br />刚才那条申请，已经走完了这条链路。</h1>
+    <h1>刚才那条申请，已经走完售后链路。</h1>
   </header>
   <div class="build-proof__columns">
-    <article><small>CARE CARD</small><strong>碰一下，进入售后</strong><p>实体卡 / 网页入口<br />选择场景，开始对话</p></article>
-    <i>→</i>
-    <article class="build-proof__core"><small>MORROW CASE</small><strong>一张持续更新的售后单</strong><p>收集材料<br />保存状态与处理条件</p></article>
-    <i>→</i>
-    <article><small>BRAND CONSOLE</small><strong>品牌审核并给出结果</strong><p>查看申请<br />换新结果同步给消费者</p></article>
+    <article><small>01 · CARE CARD</small><strong>碰一下，进入售后</strong><p>实体卡或网页入口<br />选择场景，开始对话</p></article>
+    <i aria-hidden="true">→</i>
+    <article class="build-proof__core"><small>02 · MORROW CASE</small><strong>资料与状态汇入工单</strong><p>订单、序列号、图片<br />持续保存处理进度</p></article>
+    <i aria-hidden="true">→</i>
+    <article><small>03 · SYSTEM BACKEND</small><strong>核对规则并给出结果</strong><p>规则核对与人工审核<br />结果同步给消费者</p></article>
   </div>
-  <div class="build-proof__checks"><span>✓ 对话推进申请</span><span>✓ 售后单状态流转</span><span>✓ 订单、序列号、图片</span><span>✓ 换新规则核对</span><span>✓ 人工审核</span></div>
+  <div class="build-proof__checks"><span>✓ 对话推进申请</span><span>✓ 资料与状态进入工单</span><span>✓ 规则核对并人工审核</span></div>
 </section>
 
 <style scoped>
 .build-proof { display: grid; align-content: center; min-height: 100%; }
-.build-proof h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.03; }
-.build-proof__columns { display: flex; align-items: center; justify-content: center; gap: 1.2rem; margin-top: 3rem; }
-.build-proof__columns article { width: min(16.5rem, 28vw); padding: 1.5rem; border: 1px solid var(--ae-line); border-radius: 1.35rem; background: rgba(255, 255, 255, 0.72); box-shadow: 0 1rem 2.4rem rgba(29, 29, 31, 0.07); }
+.build-proof h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.35rem, 3.4vw, 3rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.03; }
+.build-proof__columns { display: grid; grid-template-columns: minmax(0, 1fr) 2.25rem minmax(0, 1fr) 2.25rem minmax(0, 1fr); align-items: stretch; gap: 0.8rem; margin-top: 2.4rem; }
+.build-proof__columns article { min-width: 0; min-height: 10.5rem; padding: 1.35rem 1.4rem; border: 1px solid var(--ae-line); border-radius: 1.25rem; background: rgba(255, 255, 255, 0.72); box-shadow: 0 1rem 2.4rem rgba(29, 29, 31, 0.07); }
 .build-proof__columns article small { color: var(--ae-ink-muted); font-size: 0.54rem; font-weight: 760; letter-spacing: 0.12em; }
-.build-proof__columns article strong { display: block; margin-top: 0.75rem; color: var(--ae-ink); font-size: 1.28rem; font-weight: 730; letter-spacing: -0.04em; }
+.build-proof__columns article strong { display: block; margin-top: 0.72rem; color: var(--ae-ink); font-size: 1.22rem; font-weight: 730; letter-spacing: -0.04em; line-height: 1.18; }
 .build-proof__columns article p { margin: 0.7rem 0 0; color: var(--ae-ink-muted); font-size: 0.84rem; line-height: 1.55; }
-.build-proof__columns > i { color: var(--ae-blue); font-size: 1.45rem; font-style: normal; }
+.build-proof__columns > i { align-self: center; color: var(--ae-blue); font-size: 1.45rem; font-style: normal; text-align: center; }
 .build-proof__core { border-color: rgba(0, 113, 227, 0.3) !important; background: linear-gradient(145deg, #e8f2ff, #fff) !important; }
 .build-proof__core small { color: var(--ae-blue) !important; }
-.build-proof__checks { display: flex; flex-wrap: wrap; gap: 0.75rem 1.3rem; justify-content: center; margin-top: 2rem; color: var(--ae-ink-muted); font-size: 0.72rem; }
+.build-proof__checks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; margin-top: 1rem; color: var(--ae-ink-muted); font-size: 0.72rem; }
+.build-proof__checks span { padding: 0.62rem 0.85rem; border: 1px solid rgba(0, 113, 227, 0.1); border-radius: 0.8rem; background: rgba(232, 242, 255, 0.42); text-align: center; }
 .build-proof__checks span::first-letter { color: var(--ae-blue); }
 </style>
 
@@ -267,10 +268,10 @@ layout: pitch-stage
   </div>
   <div class="productivity-proof__number">
     <small>CUSTOMER SUPPORT STUDY</small>
-    <strong>34%</strong>
+    <strong class="productivity-proof__stat" aria-label="34 percent, see source note"><span>34</span><span class="productivity-proof__unit">%</span><sup>*</sup></strong>
     <p>经验较少的客服获得 AI 辅助后，<br />每小时处理问题的提升</p>
   </div>
-  <p class="productivity-proof__source">研究对象：5,179 名客户支持人员；NBER《Generative AI at Work》，2023。34% 为经验较少客服的研究结果，不是 Morrow 当前承诺的节省比例。</p>
+  <p class="productivity-proof__source">* 研究对象：5,179 名客户支持人员；NBER《Generative AI at Work》，2023。34% 为经验较少客服的研究结果。</p>
 </section>
 
 <style scoped>
@@ -280,9 +281,11 @@ layout: pitch-stage
 .productivity-proof__copy > p:not(.eyebrow) { max-width: 29rem; margin: 1.25rem 0 0; color: var(--ae-ink-muted); font-size: 1.01rem; line-height: 1.55; }
 .productivity-proof__number { padding: 1.45rem 0 1.3rem 2.8rem; border-left: 1px solid var(--ae-line); }
 .productivity-proof__number small { color: var(--ae-blue); font-size: .57rem; font-weight: 770; letter-spacing: .12em; }
-.productivity-proof__number strong { display: block; margin-top: .35rem; color: var(--ae-blue); font-size: clamp(6.8rem,12vw,10rem); font-weight: 770; letter-spacing: -.11em; line-height: .82; }
+.productivity-proof__stat { display: flex; align-items: flex-start; width: max-content; margin-top: .35rem; color: var(--ae-blue); font-size: clamp(6.8rem,12vw,10rem); font-variant-numeric: tabular-nums; font-weight: 770; letter-spacing: -.055em; line-height: .82; white-space: nowrap; }
+.productivity-proof__unit { margin-left: .035em; font-size: .82em; letter-spacing: -.035em; }
+.productivity-proof__stat sup { margin: .1em 0 0 .03em; font-size: .15em; font-weight: 720; letter-spacing: 0; line-height: 1; }
 .productivity-proof__number p { margin: 1.1rem 0 0; color: var(--ae-ink); font-size: 1rem; font-weight: 650; line-height: 1.42; }
-.productivity-proof__source { position: absolute; right: 0; bottom: 0; left: 0; margin: 0; color: #949499; font-size: .54rem; line-height: 1.4; }
+.productivity-proof__source { position: absolute; right: 0; bottom: 0; width: 42%; margin: 0; color: #949499; font-size: .54rem; line-height: 1.4; text-align: right; }
 </style>
 
 ---
@@ -354,7 +357,7 @@ layout: pitch-stage
 <!-- 14 · 愿景只基于前面已经说明的服务关系。 -->
 <section class="stripe-analogy">
   <p>Stripe 让商家不必从零搭一套支付系统。</p>
-  <h1>Morrow 想做的，是让品牌也不必从零搭<br /><span>一整套售后系统。</span></h1>
+  <h1>Morrow，让品牌不必从零搭<br /><span>一整套售后系统。</span></h1>
   <div><span>对消费者，一碰就能开始售后。</span><i>·</i><span>对品牌，一套能把售后处理下去的系统。</span></div>
 </section>
 
