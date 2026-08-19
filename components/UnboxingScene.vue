@@ -138,7 +138,7 @@
   position: absolute;
   inset: 0.65rem;
   border: 1px solid rgba(29, 29, 31, 0.06);
-  border-radius: 1.05rem;
+  border-radius: 0.85rem;
   content: "";
 }
 
@@ -160,7 +160,7 @@
 .box-inlay {
   position: absolute;
   inset: 1.05rem;
-  border-radius: 1rem;
+  border-radius: 0.45rem;
   background: #d5d5da;
   box-shadow: inset 0 0.5rem 1.2rem rgba(29, 29, 31, 0.12);
 }

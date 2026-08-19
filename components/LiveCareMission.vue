@@ -5,17 +5,17 @@ import LiveCasePulse from './LiveCasePulse.vue'
 <template>
   <section class="care-mission">
     <div class="care-mission__copy">
-      <p class="eyebrow">LIVE CARE EXPERIENCE</p>
+      <p class="eyebrow">INTERACTIVE DEMO</p>
       <p class="care-mission__lead">现在，请把自己想象成一位</p>
-      <h1>刚买了这只鼠标的<br />消费者。</h1>
-      <p class="care-mission__context">现在，它出了点问题。</p>
+      <h1>刚刚收到鼠标的<br />消费者。</h1>
+      <p v-click class="care-mission__context">但它出了点问题，你需要申请退换货。</p>
     </div>
 
-    <div class="care-mission__demo">
-      <div class="care-mission__task" aria-label="现场体验任务">
-        <span class="care-mission__task-label">YOUR TASK</span>
+    <div v-click class="care-mission__demo">
+      <div class="care-mission__task" aria-label="现场体验说明">
+        <span class="care-mission__task-label">INSTRUCTION</span>
         <h2>完成一次售后申请。</h2>
-          <p>碰一下 Care Card，在对话框左侧「＋」任选一个故障场景。</p>
+        <p>碰一下 Care Card，在对话框左侧「＋」任选一个故障场景。</p>
         <div class="care-mission__steps" aria-label="操作路径">
           <span>碰卡</span>
           <i aria-hidden="true">→</i>
@@ -77,6 +77,12 @@ import LiveCasePulse from './LiveCasePulse.vue'
   font-weight: 520;
   letter-spacing: -0.018em;
   line-height: 1.55;
+  transition: opacity 320ms ease, transform 440ms var(--ae-ease);
+}
+
+.care-mission__context.slidev-vclick-hidden {
+  opacity: 0;
+  transform: translateY(0.7rem);
 }
 
 .care-mission__task {
@@ -150,6 +156,20 @@ import LiveCasePulse from './LiveCasePulse.vue'
   gap: 1.5rem;
   min-height: 100%;
   width: 100%;
+  transition: opacity 360ms ease, transform 520ms var(--ae-ease), filter 520ms var(--ae-ease);
+}
+
+.care-mission__demo.slidev-vclick-hidden {
+  opacity: 0;
+  filter: blur(0.35rem);
+  transform: translateY(1rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .care-mission__context,
+  .care-mission__demo {
+    transition-duration: 0.001ms !important;
+  }
 }
 
 @media (max-width: 720px) {
