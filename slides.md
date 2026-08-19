@@ -227,7 +227,7 @@ layout: pitch-stage
 <section class="build-proof">
   <header>
     <p class="eyebrow">WHAT YOU JUST SAW</p>
-    <h1>刚才那条申请，已经走完售后链路。</h1>
+    <h1>从入口到审核，售后链路已闭环。</h1>
   </header>
   <div class="build-proof__columns">
     <article><small>01 · CARE CARD</small><strong>碰一下，进入售后</strong><p>实体卡或网页入口<br />选择场景，开始对话</p></article>
@@ -248,7 +248,6 @@ layout: pitch-stage
 .build-proof__columns article strong { display: block; margin-top: 0.72rem; color: var(--ae-ink); font-size: 1.22rem; font-weight: 730; letter-spacing: -0.04em; line-height: 1.18; }
 .build-proof__columns article p { margin: 0.7rem 0 0; color: var(--ae-ink-muted); font-size: 0.84rem; line-height: 1.55; }
 .build-proof__columns > i { align-self: center; color: var(--ae-blue); font-size: 1.45rem; font-style: normal; text-align: center; }
-.build-proof__core { border-color: rgba(0, 113, 227, 0.3) !important; background: linear-gradient(145deg, #e8f2ff, #fff) !important; }
 .build-proof__core small { color: var(--ae-blue) !important; }
 .build-proof__checks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; margin-top: 1rem; color: var(--ae-ink-muted); font-size: 0.72rem; }
 .build-proof__checks span { padding: 0.62rem 0.85rem; border: 1px solid rgba(0, 113, 227, 0.1); border-radius: 0.8rem; background: rgba(232, 242, 255, 0.42); text-align: center; }
