@@ -323,31 +323,67 @@ layout: pitch-stage
 layout: pitch-stage
 ---
 
-<!-- 13 · 让商业路径回答「先怎么卖」。 -->
-<section class="business-ladder">
-  <header><p class="eyebrow">HOW WE START SELLING</p><h1>第一阶段，我们先把品牌的<br />售后接起来，再收服务费。</h1></header>
-  <div class="business-ladder__steps">
-    <article><small>01 · 接入</small><strong>把入口和规则接进来</strong><p>Care Card / 网页入口，产品信息与保修条件。</p></article>
-    <i>→</i>
-    <article class="business-ladder__focus"><small>02 · 服务</small><strong>按品牌持续提供售后系统</strong><p>AI 收集信息，后台让品牌处理与更新规则。</p></article>
-    <i>→</i>
-    <article><small>03 · 标准化</small><strong>把成熟流程做成模板</strong><p>以后让更多小品牌直接启用，再按需扩展。</p></article>
+<!-- 13 · 商业模式：先服务更愿意尝新的品牌，再按服务持续收费。 -->
+<section class="business-model">
+  <header>
+    <p class="eyebrow">BUSINESS MODEL</p>
+    <h1>先服务更愿意尝新的品牌，<br /><span>再按服务持续收费。</span></h1>
+  </header>
+  <div class="business-model__audiences">
+    <article>
+      <carbon:rocket class="business-model__icon" aria-hidden="true" />
+      <div>
+        <small>01 · STARTUP / UNICORN</small>
+        <strong>决策链短，愿意尝试新东西</strong>
+        <p>更容易接受新的售后入口和 AI 协作方式，先从一个产品线开始。</p>
+      </div>
+    </article>
+    <article class="business-model__audience--blue">
+      <carbon:earth class="business-model__icon" aria-hidden="true" />
+      <div>
+        <small>02 · GLOBAL DEVICE BRANDS</small>
+        <strong>出海中小电子设备品牌</strong>
+        <p>跨市场、跨语言、跨保修规则，需要一套轻量的售后系统。</p>
+      </div>
+    </article>
   </div>
-  <p>先做难一点、价值更高的品牌售后；成熟之后，<b>再把可靠的做法交给更多品牌。</b></p>
+  <div class="business-model__economics">
+    <article class="business-model__revenue">
+      <small>REVENUE MODEL</small>
+      <strong>品牌订阅 / 服务费</strong>
+      <p>按工单量与增值模块扩展，先把一个品牌服务深，再复制到更多品牌。</p>
+    </article>
+    <article class="business-model__signal">
+      <small>MARKET SIGNAL · NRF 2025</small>
+      <strong>$849.9B</strong>
+      <p>2025 年美国零售预计退货规模</p>
+      <span>Claimlane case benchmark · <b>77% faster</b> complex RMA</span>
+    </article>
+  </div>
+  <p class="business-model__source">Sources: NRF / Happy Returns, 2025 Retail Returns Landscape · Claimlane MaxGaming case, company-reported.</p>
 </section>
 
 <style scoped>
-.business-ladder { display: grid; align-content: center; min-height: 100%; }
-.business-ladder h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.5rem, 3.9vw, 3.4rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.04; }
-.business-ladder__steps { display: flex; align-items: stretch; gap: 1.1rem; margin-top: 3rem; }
-.business-ladder__steps article { flex: 1; min-height: 10rem; padding: 1.35rem 1.45rem; border: 1px solid var(--ae-line); border-radius: 1.25rem; background: rgba(255,255,255,.72); }
-.business-ladder__steps small { color: var(--ae-blue); font-size: .56rem; font-weight: 760; letter-spacing: .12em; }
-.business-ladder__steps strong { display: block; margin-top: .72rem; color: var(--ae-ink); font-size: 1.12rem; font-weight: 720; letter-spacing: -.035em; line-height: 1.18; }
-.business-ladder__steps p { margin: .66rem 0 0; color: var(--ae-ink-muted); font-size: .82rem; line-height: 1.5; }
-.business-ladder__steps > i { align-self: center; color: var(--ae-blue); font-size: 1.3rem; font-style: normal; }
-.business-ladder__focus { border-color: rgba(0,113,227,.32) !important; background: linear-gradient(145deg,#e8f2ff,#fff) !important; }
-.business-ladder > p { margin: 1.75rem 0 0; color: var(--ae-ink-muted); font-size: .87rem; text-align: center; }
-.business-ladder > p b { color: var(--ae-ink); }
+.business-model { display: grid; align-content: start; min-height: 100%; padding-top: .35rem; }
+.business-model h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.25rem, 3.5vw, 3rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.03; }
+.business-model h1 span { color: var(--ae-blue); }
+.business-model__audiences { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.55rem; }
+.business-model__audiences article { display: grid; grid-template-columns: 2.35rem minmax(0, 1fr); gap: .85rem; min-height: 7.25rem; padding: 1.05rem 1.2rem; border: 1px solid var(--ae-line); border-radius: 1.15rem; background: rgba(255,255,255,.72); }
+.business-model__audience--blue { border-color: rgba(0,113,227,.32) !important; background: linear-gradient(145deg,#e8f2ff,#fff) !important; }
+.business-model__icon { width: 1.95rem; height: 1.95rem; padding: .4rem; border-radius: .7rem; color: var(--ae-blue); background: #e8f2ff; }
+.business-model__audiences small, .business-model__economics small { color: var(--ae-blue); font-size: .53rem; font-weight: 760; letter-spacing: .1em; }
+.business-model__audiences strong { display: block; margin-top: .55rem; color: var(--ae-ink); font-size: 1rem; font-weight: 720; letter-spacing: -.035em; line-height: 1.16; }
+.business-model__audiences p { margin: .45rem 0 0; color: var(--ae-ink-muted); font-size: .75rem; line-height: 1.4; }
+.business-model__economics { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(17rem, .85fr); gap: 1rem; margin-top: .8rem; }
+.business-model__economics article { min-height: 5.7rem; padding: .9rem 1.15rem; border: 1px solid var(--ae-line); border-radius: 1rem; background: rgba(255,255,255,.72); }
+.business-model__revenue strong { display: block; margin-top: .45rem; color: var(--ae-ink); font-size: 1.12rem; font-weight: 720; letter-spacing: -.035em; }
+.business-model__revenue p { max-width: 32rem; margin: .35rem 0 0; color: var(--ae-ink-muted); font-size: .75rem; line-height: 1.35; }
+.business-model__signal { border-color: rgba(0,113,227,.32) !important; background: linear-gradient(145deg,#e8f2ff,#fff) !important; }
+.business-model__signal strong { display: block; margin-top: .12rem; color: var(--ae-blue); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 780; letter-spacing: -.07em; line-height: .95; }
+.business-model__signal p { margin: .25rem 0 0; color: var(--ae-ink); font-size: .75rem; font-weight: 650; }
+.business-model__signal span { display: block; margin-top: .25rem; color: var(--ae-ink-muted); font-size: .62rem; }
+.business-model__signal b { color: var(--ae-blue); }
+.business-model__source { margin: .5rem 0 0; color: #949499; font-size: .48rem; line-height: 1.25; text-align: right; }
 </style>
 
 ---

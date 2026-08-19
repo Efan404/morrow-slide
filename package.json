@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "slidev slides.md --open",
     "build": "slidev build slides.md",
-    "build:pages": "slidev build slides.md --base /ppt/ && cp dist/index.html dist/404.html",
+    "build:pages": "slidev build slides.md --base /morrow-slide/ && cp dist/index.html dist/404.html",
     "export": "slidev export slides.md"
   },
   "dependencies": {
