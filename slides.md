@@ -259,24 +259,24 @@ layout: pitch-stage
 layout: pitch-stage
 ---
 
-<!-- 11 · 后半段的记忆点：人机协同的可验证效率证据。 -->
+<!-- 11 · 人机协同的可验证效率证据。 -->
 <section class="productivity-proof">
   <div class="productivity-proof__copy">
     <p class="eyebrow">WHY A BRAND CARES</p>
-    <h1>当 AI 先把重复工作接住，<br /><span>人工才能去处理真正需要判断的售后。</span></h1>
-    <p>这不是“让 AI 替人拍板”。它是让品牌把人的时间，留给换新、退款和例外情况。</p>
+    <h1>AI 处理重复，<br /><span>人工判断例外。</span></h1>
+    <p>不是让 AI 替人拍板，而是把人的时间留给换新、退款与例外。</p>
   </div>
   <div class="productivity-proof__number">
     <small>CUSTOMER SUPPORT STUDY</small>
     <strong class="productivity-proof__stat" aria-label="34 percent, see source note"><span>34</span><span class="productivity-proof__unit">%</span><sup>*</sup></strong>
-    <p>经验较少的客服获得 AI 辅助后，<br />每小时处理问题的提升</p>
+    <p>低经验客服获得 AI 辅助后，处理效率提升</p>
   </div>
-  <p class="productivity-proof__source">* 研究对象：5,179 名客户支持人员；NBER《Generative AI at Work》，2023。34% 为经验较少客服的研究结果。</p>
+  <p class="productivity-proof__source">* NBER《Generative AI at Work》（2023）：5,179 名客服；低经验客服效率提升 34%。</p>
 </section>
 
 <style scoped>
 .productivity-proof { position: relative; display: grid; grid-template-columns: minmax(24rem,1.08fr) minmax(19rem,.72fr); align-items: center; gap: clamp(3rem,8vw,8rem); min-height: 100%; }
-.productivity-proof__copy h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.5rem,3.95vw,3.55rem); font-weight: 750; letter-spacing: -.063em; line-height: 1.04; }
+.productivity-proof__copy h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.9rem,4.1vw,3.6rem); font-weight: 750; letter-spacing: -.063em; line-height: 1.04; }
 .productivity-proof__copy h1 span { color: var(--ae-blue); }
 .productivity-proof__copy > p:not(.eyebrow) { max-width: 29rem; margin: 1.25rem 0 0; color: var(--ae-ink-muted); font-size: 1.01rem; line-height: 1.55; }
 .productivity-proof__number { padding: 1.45rem 0 1.3rem 2.8rem; border-left: 1px solid var(--ae-line); }
@@ -284,8 +284,8 @@ layout: pitch-stage
 .productivity-proof__stat { display: flex; align-items: flex-start; width: max-content; margin-top: .35rem; color: var(--ae-blue); font-size: clamp(6.8rem,12vw,10rem); font-variant-numeric: tabular-nums; font-weight: 770; letter-spacing: -.055em; line-height: .82; white-space: nowrap; }
 .productivity-proof__unit { margin-left: .035em; font-size: .82em; letter-spacing: -.035em; }
 .productivity-proof__stat sup { margin: .1em 0 0 .03em; font-size: .15em; font-weight: 720; letter-spacing: 0; line-height: 1; }
-.productivity-proof__number p { margin: 1.1rem 0 0; color: var(--ae-ink); font-size: 1rem; font-weight: 650; line-height: 1.42; }
-.productivity-proof__source { position: absolute; right: 0; bottom: 0; width: 42%; margin: 0; color: #949499; font-size: .54rem; line-height: 1.4; text-align: right; }
+.productivity-proof__number p { margin: 1.1rem 0 0; color: var(--ae-ink); font-size: 1rem; font-weight: 650; line-height: 1.42; white-space: nowrap; }
+.productivity-proof__source { position: absolute; right: 0; bottom: 0; width: 52%; margin: 0; color: #949499; font-size: .48rem; line-height: 1.25; text-align: right; white-space: nowrap; }
 </style>
 
 ---
