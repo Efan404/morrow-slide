@@ -292,30 +292,69 @@ layout: pitch-stage
 layout: pitch-stage
 ---
 
-<!-- 12 · 从刚才那种复杂、需要判断的售后开始。 -->
+<!-- 12 · 痛点与首批客户：先回答谁最痛、为什么现在切入。 -->
 <section class="first-customers">
   <header>
-    <p class="eyebrow">WHERE WE START</p>
-    <h1>我们先从这类电子品牌开始。</h1>
-    <p>它们不是没有客服，而是每一件售后都开始需要判断和交接。</p>
+    <p class="eyebrow">PAIN × FIRST CUSTOMERS</p>
+    <h1>复杂售后，先从两类品牌切入。</h1>
+    <p>它们的售后量真实增长，却不想从零搭一套系统。</p>
   </header>
-  <div class="first-customers__reasons">
-    <span>型号和保修规则变多</span><i>+</i>
-    <span>订单、序列号、证据要核对</span><i>+</i>
-    <span>售后结果影响口碑和成本</span>
+  <div class="first-customers__grid">
+    <article class="first-customers__pain">
+      <small>WHY NOW</small>
+      <div class="first-customers__pain-row">
+        <span>01</span>
+        <div><strong>规则变多</strong><p>型号、市场与保修政策不断叠加。</p></div>
+      </div>
+      <div class="first-customers__pain-row">
+        <span>02</span>
+        <div><strong>证据分散</strong><p>订单、序列号和测试结果要一起核对。</p></div>
+      </div>
+      <div class="first-customers__pain-row">
+        <span>03</span>
+        <div><strong>交接变慢</strong><p>客服、审批与履约之间反复传递。</p></div>
+      </div>
+    </article>
+    <div class="first-customers__icp">
+      <article>
+        <carbon:rocket class="first-customers__icon" aria-hidden="true" />
+        <div>
+          <small>01 · STARTUP / UNICORN</small>
+          <strong>决策链短，愿意尝试新入口</strong>
+          <p>先从一个产品线开始，把新的售后协作方式跑通。</p>
+        </div>
+      </article>
+      <article>
+        <carbon:earth class="first-customers__icon" aria-hidden="true" />
+        <div>
+          <small>02 · GLOBAL DEVICE BRANDS</small>
+          <strong>出海中小电子设备品牌</strong>
+          <p>跨市场、跨语言、跨保修规则，需要轻量的售后系统。</p>
+        </div>
+      </article>
+    </div>
   </div>
-  <p class="first-customers__answer">它们需要把“客户说了什么”变成“品牌接下来要做什么”，<b>但不想自己从零搭系统。</b></p>
+  <p class="first-customers__answer">共同点：<b>售后量真实、规则复杂，但不想从零搭系统。</b></p>
 </section>
 
 <style scoped>
-.first-customers { display: grid; align-content: center; justify-items: center; min-height: 100%; text-align: center; }
-.first-customers .eyebrow { text-align: center; }
-.first-customers h1 { margin: 0; color: var(--ae-ink); font-size: clamp(3rem, 4.7vw, 4.1rem); font-weight: 750; letter-spacing: -0.068em; }
-.first-customers header > p:not(.eyebrow) { margin: 0.75rem 0 0; color: var(--ae-ink-muted); font-size: 1.12rem; }
-.first-customers__reasons { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.8rem; max-width: 55rem; margin-top: 2.8rem; }
-.first-customers__reasons span { padding: 0.72rem 1rem; border: 1px solid var(--ae-line); border-radius: 999px; color: var(--ae-ink); background: rgba(255, 255, 255, 0.7); font-size: 0.88rem; font-weight: 620; }
-.first-customers__reasons i { color: var(--ae-blue); font-size: 1.05rem; font-style: normal; }
-.first-customers__answer { margin: 2rem 0 0; color: var(--ae-ink-muted); font-size: 1.05rem; }
+.first-customers { display: grid; align-content: start; min-height: 100%; padding-top: .35rem; }
+.first-customers h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.35rem, 3.6vw, 3.1rem); font-weight: 750; letter-spacing: -.062em; line-height: 1.03; }
+.first-customers header > p:not(.eyebrow) { margin: .65rem 0 0; color: var(--ae-ink-muted); font-size: .95rem; }
+.first-customers__grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 1rem; margin-top: 1.45rem; }
+.first-customers__pain, .first-customers__icp article { min-height: 10.5rem; padding: 1.1rem 1.2rem; border: 1px solid var(--ae-line); border-radius: 1.15rem; background: rgba(255,255,255,.72); }
+.first-customers__pain > small, .first-customers__icp small { color: var(--ae-blue); font-size: .53rem; font-weight: 760; letter-spacing: .1em; }
+.first-customers__pain-row { display: grid; grid-template-columns: 2rem minmax(0,1fr); gap: .7rem; align-items: start; margin-top: .72rem; }
+.first-customers__pain-row + .first-customers__pain-row { padding-top: .62rem; border-top: 1px solid rgba(29,29,31,.08); }
+.first-customers__pain-row > span { color: var(--ae-blue); font-size: .72rem; font-variant-numeric: tabular-nums; font-weight: 760; }
+.first-customers__pain-row strong { color: var(--ae-ink); font-size: .92rem; font-weight: 720; letter-spacing: -.03em; }
+.first-customers__pain-row p { margin: .15rem 0 0; color: var(--ae-ink-muted); font-size: .69rem; line-height: 1.35; }
+.first-customers__icp { display: grid; gap: 1rem; }
+.first-customers__icp article { display: grid; grid-template-columns: 2.35rem minmax(0,1fr); gap: .85rem; min-height: 0; padding: 1rem 1.15rem; }
+.first-customers__icon { width: 1.95rem; height: 1.95rem; padding: .4rem; border-radius: .7rem; color: var(--ae-blue); background: #e8f2ff; }
+.first-customers__icp strong { display: block; margin-top: .48rem; color: var(--ae-ink); font-size: .92rem; font-weight: 720; letter-spacing: -.035em; line-height: 1.18; }
+.first-customers__icp p { margin: .35rem 0 0; color: var(--ae-ink-muted); font-size: .69rem; line-height: 1.4; }
+.first-customers__answer { margin: 1.1rem 0 0; color: var(--ae-ink-muted); font-size: .88rem; }
 .first-customers__answer b { color: var(--ae-ink); }
 </style>
 
@@ -323,65 +362,57 @@ layout: pitch-stage
 layout: pitch-stage
 ---
 
-<!-- 13 · 商业模式：先服务更愿意尝新的品牌，再按服务持续收费。 -->
-<section class="business-model">
+<!-- 13 · 商业模式：按年工单量阶梯收费，先免费再增长。 -->
+<section class="pricing-market">
   <header>
-    <p class="eyebrow">BUSINESS MODEL</p>
-    <h1>先服务敢尝新的品牌，按售后收费。</h1>
+    <p class="eyebrow">REVENUE × MARKET</p>
+    <h1>按年工单量阶梯收费，<span>先免费再增长。</span></h1>
   </header>
-  <div class="business-model__audiences">
-    <article>
-      <carbon:rocket class="business-model__icon" aria-hidden="true" />
-      <div>
-        <small>01 · STARTUP / UNICORN</small>
-        <strong>决策链短，愿意尝试新东西</strong>
-        <p>更容易接受新的售后入口和 AI 协作方式，先从一个产品线开始。</p>
+  <div class="pricing-market__grid">
+    <article class="pricing-market__tiers">
+      <small>PRICING MODEL · ANNUAL TICKET VOLUME</small>
+      <div class="pricing-tier">
+        <strong class="pricing-tier__range">0–1,000</strong>
+        <div><b>免费使用</b><p>先跑通一条售后链路，降低试用门槛。</p></div>
       </div>
-    </article>
-    <article>
-      <carbon:earth class="business-model__icon" aria-hidden="true" />
-      <div>
-        <small>02 · GLOBAL DEVICE BRANDS</small>
-        <strong>出海中小电子设备品牌</strong>
-        <p>跨市场、跨语言、跨保修规则，需要一套轻量的售后系统。</p>
+      <div class="pricing-tier">
+        <strong class="pricing-tier__range">1,000–10,000</strong>
+        <div><b>月度订阅</b><p>按月付费，包含系统使用与标准规则配置。</p></div>
       </div>
+      <div class="pricing-tier">
+        <strong class="pricing-tier__range">&gt;10,000</strong>
+        <div><b>定制化价格</b><p>按规模、地区与集成需求共同设计方案。</p></div>
+      </div>
+      <p class="pricing-market__note">价格随年工单量升级，规则透明，不额外叠加单票费用。</p>
     </article>
-  </div>
-  <div class="business-model__economics">
-    <article class="business-model__revenue">
-      <small>REVENUE MODEL</small>
-      <strong>品牌订阅 + 工单服务费</strong>
-      <p>基础订阅覆盖接入与规则；再按工单量和增值模块扩展。</p>
-    </article>
-    <article class="business-model__signal">
+    <article class="pricing-market__signal">
       <small>MARKET SIGNAL · NRF 2025</small>
       <strong>$849.9B</strong>
       <p>2025 年美国零售预计退货规模</p>
       <span>Claimlane case benchmark · <b>77% faster</b> complex RMA</span>
     </article>
   </div>
-  <p class="business-model__source">Sources: NRF / Happy Returns, 2025 Retail Returns Landscape · Claimlane MaxGaming case, company-reported.</p>
+  <p class="pricing-market__source">Sources: NRF / Happy Returns, 2025 Retail Returns Landscape · Claimlane MaxGaming case, company-reported.</p>
 </section>
 
 <style scoped>
-.business-model { display: grid; align-content: start; min-height: 100%; padding-top: .35rem; }
-.business-model h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.35rem, 3.6vw, 3.1rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.03; }
-.business-model__audiences { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.55rem; }
-.business-model__audiences article { display: grid; grid-template-columns: 2.35rem minmax(0, 1fr); gap: .85rem; min-height: 7.25rem; padding: 1.05rem 1.2rem; border: 1px solid var(--ae-line); border-radius: 1.15rem; background: rgba(255,255,255,.72); }
-.business-model__icon { width: 1.95rem; height: 1.95rem; padding: .4rem; border-radius: .7rem; color: var(--ae-blue); background: #e8f2ff; }
-.business-model__audiences small, .business-model__economics small { color: var(--ae-blue); font-size: .53rem; font-weight: 760; letter-spacing: .1em; }
-.business-model__audiences strong { display: block; margin-top: .55rem; color: var(--ae-ink); font-size: 1rem; font-weight: 720; letter-spacing: -.035em; line-height: 1.16; }
-.business-model__audiences p { margin: .45rem 0 0; color: var(--ae-ink-muted); font-size: .75rem; line-height: 1.4; }
-.business-model__economics { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(17rem, .85fr); gap: 1rem; margin-top: .8rem; }
-.business-model__economics article { min-height: 5.7rem; padding: .9rem 1.15rem; border: 1px solid var(--ae-line); border-radius: 1rem; background: rgba(255,255,255,.72); }
-.business-model__revenue strong { display: block; margin-top: .45rem; color: var(--ae-ink); font-size: 1.12rem; font-weight: 720; letter-spacing: -.035em; }
-.business-model__revenue p { max-width: 32rem; margin: .35rem 0 0; color: var(--ae-ink-muted); font-size: .75rem; line-height: 1.35; }
-.business-model__signal { background: rgba(255,255,255,.72); }
-.business-model__signal strong { display: block; margin-top: .12rem; color: var(--ae-blue); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 780; letter-spacing: -.07em; line-height: .95; }
-.business-model__signal p { margin: .25rem 0 0; color: var(--ae-ink); font-size: .75rem; font-weight: 650; }
-.business-model__signal span { display: block; margin-top: .25rem; color: var(--ae-ink-muted); font-size: .62rem; }
-.business-model__signal b { color: var(--ae-blue); }
-.business-model__source { margin: .5rem 0 0; color: #949499; font-size: .48rem; line-height: 1.25; text-align: right; }
+.pricing-market { display: grid; align-content: start; min-height: 100%; padding-top: .35rem; }
+.pricing-market h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.35rem, 3.6vw, 3.1rem); font-weight: 750; letter-spacing: -.062em; line-height: 1.03; }
+.pricing-market h1 span { color: var(--ae-blue); }
+.pricing-market__grid { display: grid; grid-template-columns: minmax(0, 1.16fr) minmax(17rem, .84fr); gap: 1rem; margin-top: 1.55rem; }
+.pricing-market__tiers, .pricing-market__signal { min-height: 13.3rem; padding: 1.1rem 1.2rem; border: 1px solid var(--ae-line); border-radius: 1.15rem; background: rgba(255,255,255,.72); }
+.pricing-market__tiers > small, .pricing-market__signal > small { color: var(--ae-blue); font-size: .53rem; font-weight: 760; letter-spacing: .1em; }
+.pricing-tier { display: grid; grid-template-columns: 8.3rem minmax(0,1fr); gap: .95rem; align-items: center; padding: .7rem 0; }
+.pricing-tier + .pricing-tier { border-top: 1px solid rgba(29,29,31,.08); }
+.pricing-tier__range { color: var(--ae-blue); font-size: .92rem; font-variant-numeric: tabular-nums; font-weight: 760; letter-spacing: -.04em; }
+.pricing-tier b { color: var(--ae-ink); font-size: .86rem; font-weight: 720; }
+.pricing-tier p { margin: .16rem 0 0; color: var(--ae-ink-muted); font-size: .67rem; line-height: 1.35; }
+.pricing-market__note { margin: .35rem 0 0; color: var(--ae-ink-muted); font-size: .64rem; line-height: 1.35; }
+.pricing-market__signal strong { display: block; margin-top: .55rem; color: var(--ae-blue); font-size: clamp(2.7rem, 4.8vw, 4.1rem); font-weight: 780; letter-spacing: -.07em; line-height: .95; }
+.pricing-market__signal p { margin: .45rem 0 0; color: var(--ae-ink); font-size: .82rem; font-weight: 650; }
+.pricing-market__signal span { display: block; margin-top: 1.05rem; color: var(--ae-ink-muted); font-size: .66rem; }
+.pricing-market__signal b { color: var(--ae-blue); }
+.pricing-market__source { margin: .5rem 0 0; color: #949499; font-size: .48rem; line-height: 1.25; text-align: right; }
 </style>
 
 ---
