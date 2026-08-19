@@ -145,7 +145,6 @@ layout: pitch-stage
   <header>
     <p class="eyebrow">WHAT JUST ENTERED THE BACKEND</p>
     <h1>一段对话，先变成<br /><span>一张可以处理的申请。</span></h1>
-    <p>不是提醒品牌“有人来问了”，而是把做决定需要的东西放到一起。</p>
   </header>
   <div class="case-contents__grid">
     <article><small>01 · 哪个产品</small><strong>型号、订单、序列号</strong></article>
@@ -165,7 +164,6 @@ layout: pitch-stage
 .case-contents__grid article { min-height: 9.4rem; padding: 1.25rem 1.05rem; border: 1px solid var(--ae-line); border-radius: 1.15rem; background: rgba(255,255,255,.72); }
 .case-contents__grid small { display: block; color: var(--ae-blue); font-size: .56rem; font-weight: 760; letter-spacing: .1em; }
 .case-contents__grid strong { display: block; margin-top: .85rem; color: var(--ae-ink); font-size: 1.05rem; font-weight: 710; letter-spacing: -.035em; line-height: 1.26; }
-.case-contents__decision { border-color: rgba(0,113,227,.32) !important; background: linear-gradient(145deg,#e8f2ff,#fff) !important; }
 .case-contents__line { margin: 1.6rem 0 0; color: var(--ae-ink-muted); font-size: .9rem; text-align: center; }
 </style>
 
