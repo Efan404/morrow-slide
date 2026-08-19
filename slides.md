@@ -327,7 +327,7 @@ layout: pitch-stage
 <section class="business-model">
   <header>
     <p class="eyebrow">BUSINESS MODEL</p>
-    <h1>先服务更愿意尝新的品牌，<br /><span>再按服务持续收费。</span></h1>
+    <h1>先服务敢尝新的品牌，按售后收费。</h1>
   </header>
   <div class="business-model__audiences">
     <article>
@@ -338,7 +338,7 @@ layout: pitch-stage
         <p>更容易接受新的售后入口和 AI 协作方式，先从一个产品线开始。</p>
       </div>
     </article>
-    <article class="business-model__audience--blue">
+    <article>
       <carbon:earth class="business-model__icon" aria-hidden="true" />
       <div>
         <small>02 · GLOBAL DEVICE BRANDS</small>
@@ -350,8 +350,8 @@ layout: pitch-stage
   <div class="business-model__economics">
     <article class="business-model__revenue">
       <small>REVENUE MODEL</small>
-      <strong>品牌订阅 / 服务费</strong>
-      <p>按工单量与增值模块扩展，先把一个品牌服务深，再复制到更多品牌。</p>
+      <strong>品牌订阅 + 工单服务费</strong>
+      <p>基础订阅覆盖接入与规则；再按工单量和增值模块扩展。</p>
     </article>
     <article class="business-model__signal">
       <small>MARKET SIGNAL · NRF 2025</small>
@@ -365,11 +365,9 @@ layout: pitch-stage
 
 <style scoped>
 .business-model { display: grid; align-content: start; min-height: 100%; padding-top: .35rem; }
-.business-model h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.25rem, 3.5vw, 3rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.03; }
-.business-model h1 span { color: var(--ae-blue); }
+.business-model h1 { margin: 0; color: var(--ae-ink); font-size: clamp(2.35rem, 3.6vw, 3.1rem); font-weight: 750; letter-spacing: -0.062em; line-height: 1.03; }
 .business-model__audiences { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.55rem; }
 .business-model__audiences article { display: grid; grid-template-columns: 2.35rem minmax(0, 1fr); gap: .85rem; min-height: 7.25rem; padding: 1.05rem 1.2rem; border: 1px solid var(--ae-line); border-radius: 1.15rem; background: rgba(255,255,255,.72); }
-.business-model__audience--blue { border-color: rgba(0,113,227,.32) !important; background: linear-gradient(145deg,#e8f2ff,#fff) !important; }
 .business-model__icon { width: 1.95rem; height: 1.95rem; padding: .4rem; border-radius: .7rem; color: var(--ae-blue); background: #e8f2ff; }
 .business-model__audiences small, .business-model__economics small { color: var(--ae-blue); font-size: .53rem; font-weight: 760; letter-spacing: .1em; }
 .business-model__audiences strong { display: block; margin-top: .55rem; color: var(--ae-ink); font-size: 1rem; font-weight: 720; letter-spacing: -.035em; line-height: 1.16; }
@@ -378,7 +376,7 @@ layout: pitch-stage
 .business-model__economics article { min-height: 5.7rem; padding: .9rem 1.15rem; border: 1px solid var(--ae-line); border-radius: 1rem; background: rgba(255,255,255,.72); }
 .business-model__revenue strong { display: block; margin-top: .45rem; color: var(--ae-ink); font-size: 1.12rem; font-weight: 720; letter-spacing: -.035em; }
 .business-model__revenue p { max-width: 32rem; margin: .35rem 0 0; color: var(--ae-ink-muted); font-size: .75rem; line-height: 1.35; }
-.business-model__signal { border-color: rgba(0,113,227,.32) !important; background: linear-gradient(145deg,#e8f2ff,#fff) !important; }
+.business-model__signal { background: rgba(255,255,255,.72); }
 .business-model__signal strong { display: block; margin-top: .12rem; color: var(--ae-blue); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 780; letter-spacing: -.07em; line-height: .95; }
 .business-model__signal p { margin: .25rem 0 0; color: var(--ae-ink); font-size: .75rem; font-weight: 650; }
 .business-model__signal span { display: block; margin-top: .25rem; color: var(--ae-ink-muted); font-size: .62rem; }
