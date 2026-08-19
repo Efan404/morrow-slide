@@ -383,7 +383,7 @@ layout: pitch-stage
         <strong class="pricing-tier__range">&gt;10,000</strong>
         <div><b>定制化价格</b><p>按规模、地区与集成需求共同设计方案。</p></div>
       </div>
-      <p class="pricing-market__note">价格随年工单量升级，规则透明，不额外叠加单票费用。</p>
+      <p class="pricing-market__note">前两档不额外叠加单票费用，超过 10,000 进入定制化方案。</p>
     </article>
     <article class="pricing-market__signal">
       <small>MARKET SIGNAL · NRF 2025</small>
