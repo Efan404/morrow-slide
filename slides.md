@@ -105,7 +105,7 @@ layout: pitch-stage
 layout: pitch-stage
 ---
 
-<!-- 06 · 第一张售后单的交接。 -->
+<!-- 06 · 第一张售后单的交接；三次点击依次展示消费者、Morrow、品牌节点。 -->
 <section class="case-handoff">
   <div class="case-handoff__copy">
     <p class="eyebrow">THE HANDOFF</p>
@@ -113,11 +113,11 @@ layout: pitch-stage
     <p>消费者的一段对话，已经是一张品牌可以处理的售后单。</p>
   </div>
   <div class="case-handoff__flow" aria-label="消费者端到品牌端的售后交接">
-    <div class="handoff-node"><small>CONSUMER</small><strong>一次售后申请</strong></div>
-    <span class="handoff-arrow" aria-hidden="true">→</span>
-    <div class="handoff-node handoff-node--blue"><small>MORROW</small><strong>一张售后单</strong></div>
-    <span class="handoff-arrow" aria-hidden="true">→</span>
-    <div class="handoff-node"><small>BRAND</small><strong>品牌开始处理</strong></div>
+    <div class="handoff-node" v-click="1"><small>CONSUMER</small><strong>一次售后申请</strong></div>
+    <span class="handoff-arrow" v-click="2" aria-hidden="true">→</span>
+    <div class="handoff-node handoff-node--blue" v-click="2"><small>MORROW</small><strong>一张售后单</strong></div>
+    <span class="handoff-arrow" v-click="3" aria-hidden="true">→</span>
+    <div class="handoff-node" v-click="3"><small>BRAND</small><strong>品牌开始处理</strong></div>
   </div>
 </section>
 
@@ -131,7 +131,6 @@ layout: pitch-stage
 .handoff-node { display: grid; gap: 0.36rem; min-width: 10.5rem; padding: 1.2rem 1.3rem; border: 1px solid var(--ae-line); border-radius: 1.2rem; background: rgba(255, 255, 255, 0.76); box-shadow: 0 0.8rem 2rem rgba(29, 29, 31, 0.07); text-align: left; }
 .handoff-node small { color: var(--ae-ink-muted); font-size: 0.54rem; font-weight: 750; letter-spacing: 0.12em; }
 .handoff-node strong { color: var(--ae-ink); font-size: 1.03rem; font-weight: 710; letter-spacing: -0.025em; }
-.handoff-node--blue { border-color: rgba(0, 113, 227, 0.28); background: linear-gradient(145deg, rgba(235, 246, 255, 0.98), rgba(255, 255, 255, 0.92)); }
 .handoff-node--blue small { color: var(--ae-blue); }
 .handoff-arrow { color: var(--ae-blue); font-size: 1.7rem; font-weight: 430; }
 </style>
